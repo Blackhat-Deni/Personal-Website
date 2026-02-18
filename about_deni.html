@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Deni Pun Magar</title>
+    <title>About Deni</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -98,6 +100,18 @@
 
         .flower-node.active .flower-icon {
             color: #1c1917;
+        }
+
+        .associate-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .associate-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -326,8 +340,7 @@
                 <h2
                     style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; border-left: 2px solid #e7e5e4; padding-left: 0.75rem;">
                     In Association With:</h2>
-                <div
-                    style="display: grid; grid-template-columns: 1fr; sm:grid-template-columns: 1fr 1fr; gap: 1rem; font-family: 'JetBrains Mono', monospace;">
+                <div class="associate-grid font-mono-jb">
                     <p
                         style="font-size: 0.75rem; color: #78716c; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
                         Surkhet Chamber Of Commerce and Industry (SCOCI)
