@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Craftsman | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js CDN -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0c0c;
+            color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Mesh Gradient Background */
+        .mesh-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(30, 30, 50, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(50, 30, 30, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(20, 40, 30, 0.5) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+
+        /* Noise Texture Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+            pointer-events: none;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .frame-shadow {
+            box-shadow: 0 4px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body x-data="portfolioApp()" x-init="initGallery()">
+
+    <!-- Decorative Background -->
+    <div class="mesh-gradient"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-8 py-12 flex justify-between items-end border-b border-white/5">
+        <div>
+            <h1 class="text-xs uppercase tracking-[0.5em] font-light text-white/40 mb-2">Portfolio 2026</h1>
+            <p class="text-2xl font-light tracking-tight italic">Digital Craftsman.</p>
+        </div>
+        <div class="text-[10px] uppercase tracking-[0.3em] font-medium text-white/50 space-x-8 hidden md:block">
+            <a href="gallery.html" class="hover:text-white transition-colors">Archive</a>
+            <a href="bookshelf.html" class="hover:text-white transition-colors">Library</a>
+            <span class="text-white/20">/</span>
+            <a href="home.html" class="text-white">Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-7xl mx-auto px-8 py-24 md:py-40">
+        <h2 class="text-6xl md:text-9xl font-light tracking-tighter leading-none mb-12">
+            Form <span class="font-thin text-white/20">&</span> <br>Precision.
+        </h2>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+            <p class="max-w-md text-white/50 font-light leading-relaxed">
+                A study in digital materiality. This space serves as a living document of artifacts, concepts, and
+                minimal observations.
+            </p>
+            <div class="flex items-center gap-4 group cursor-pointer" @click="scrollToGallery()">
+                <span class="text-[10px] uppercase tracking-widest font-bold group-hover:mr-2 transition-all">View
+                    Fragments</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-arrow-down">
+                    <path d="M12 5v14" />
+                    <path d="m19 12-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic Gallery Grid -->
+    <main id="gallery-grid" class="max-w-7xl mx-auto px-8 pb-40">
+        <!-- Error State -->
+        <template x-if="error">
+            <div class="py-20 text-center border border-dashed border-white/10">
+                <p class="text-white/30 italic">Error loading collection. Verify gallery.json exists.</p>
+            </div>
+        </template>
+
+        <!-- Loading State -->
+        <template x-if="loading && !error">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <template x-for="i in 3">
+                    <div class="md:col-span-4 h-96 bg-white/5 animate-pulse rounded-sm"></div>
+                </template>
+            </div>
+        </template>
+
+        <!-- Masonry Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12" x-show="!loading && !error" x-cloak>
+            <template x-for="item in galleryItems" :key="item.id">
+                <div :class="item.span"
+                    class="group relative overflow-hidden bg-[#111] p-2 md:p-4 border border-white/10 frame-shadow transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-white/20">
+                    <div class="relative w-full h-full overflow-hidden">
+                        <img :src="item.url" :alt="item.title"
+                            class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110">
+                    </div>
+                    <!-- Subtle Frame Label -->
+                    <div
+                        class="absolute bottom-6 left-6 md:bottom-10 md:left-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-[9px] uppercase tracking-widest bg-black/80 px-3 py-1 text-white/70"
+                            x-text="item.title"></span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="max-w-7xl mx-auto px-8 py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <p class="text-white/20 text-[10px] uppercase tracking-[0.4em] font-light">Digital Craftsman &copy; 2026</p>
+
+        <!-- Discreet CMS Login -->
+        <a href="/admin/"
+            class="text-[10px] uppercase tracking-widest text-white/5 hover:text-white/40 transition-colors border border-white/5 px-4 py-2">
+            Admin Access
+        </a>
+    </footer>
+
+    <script>
+        function portfolioApp() {
+            return {
+                galleryItems: [],
+                loading: true,
+                error: false,
+
+                async initGallery() {
+                    try {
+                        const response = await fetch('gallery.json');
+                        if (!response.ok) throw new Error('Failed to fetch');
+                        const data = await response.json();
+                        this.galleryItems = data.gallery;
+                    } catch (err) {
+                        console.error("Gallery initialization error:", err);
+                        this.error = true;
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                scrollToGallery() {
+                    document.getElementById('gallery-grid').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

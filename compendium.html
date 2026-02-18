@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compendium</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .compendium-page {
+            --text-color: #111111;
+            background-color: #fafaf9;
+            /* Fallback */
+            color: var(--text-color);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Effects */
+        .aurora-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: #fafaf9;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .back-nav {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+
+        .aurora-blob {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: move 25s infinite alternate ease-in-out;
+            opacity: 0.7;
+        }
+
+        .blob-1 {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%);
+            top: -15%;
+            left: -10%;
+        }
+
+        .blob-2 {
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+            bottom: -15%;
+            right: -10%;
+            animation-delay: -7s;
+        }
+
+        .blob-3 {
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+            top: 35%;
+            left: 35%;
+            animation-delay: -14s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(10%, 10%) scale(1.1);
+            }
+        }
+
+        .back-nav {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+
+        .back-link {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #888;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #111;
+        }
+    </style>
+</head>
+
+<body class="compendium-page fade-in">
+    <div class="aurora-container">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+        <div class="aurora-blob blob-3"></div>
+    </div>
+    <nav class="back-nav">
+        <a href="home.html" class="back-link">&larr; Back to Identity</a>
+    </nav>
+
+    <div class="container mx-auto px-4 py-24 max-w-6xl">
+        <!-- THE COMPENDIUM Section -->
+        <section class="compendium-section">
+            <div class="compendium-header mb-16 text-center">
+                <h1 class="compendium-title text-5xl uppercase tracking-[0.3em] font-light mb-4">THE COMPENDIUM</h1>
+            </div>
+
+            <div class="compendium-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Python Course Card -->
+                <div class="resource-card group">
+                    <div
+                        class="card-content flex flex-col h-full border border-stone-100 rounded-3xl overflow-hidden transition-all duration-500 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 bg-white">
+                        <a href="https://youtube.com/playlist?list=PL8HmoRTjTSlEgS2GsFaDr9zDLC1xD9FZf&si=M5L8hCHu9SLRjIJ7"
+                            target="_blank" class="block relative aspect-[16/10] overflow-hidden group/cover">
+                            <img src="YT thumbnails/studio_square_thumbnail.jpg" alt="Python Logic"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover/cover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-black/40 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center">
+                                <div
+                                    class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform scale-90 group-hover/cover:scale-100 transition-transform duration-500">
+                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span
+                                class="category-tag text-[10px] font-bold tracking-tighter uppercase mb-4 py-1 px-3 bg-blue-50 text-blue-600 rounded-full w-fit">Python</span>
+                            <h3 class="resource-title text-2xl font-medium mb-4 font-mono text-stone-800">Mastering the
+                                Python Logic</h3>
+                            <p class="resource-description text-sm text-stone-500 mb-8 flex-grow leading-relaxed">Python
+                                Basics.</p>
+                            <div class="card-footer flex justify-between items-center border-t border-stone-50 pt-6">
+                                <a href="https://youtube.com/playlist?list=PL8HmoRTjTSlEgS2GsFaDr9zDLC1xD9FZf&si=M5L8hCHu9SLRjIJ7"
+                                    target="_blank"
+                                    class="source-link flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
+                                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                                    <span class="text-xs uppercase tracking-widest font-mono">Watch</span>
+                                </a>
+                                <div class="source-icon">
+                                    <i data-lucide="play"
+                                        class="w-5 h-5 text-stone-300 group-hover:text-blue-500 transition-colors"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cinematography Card -->
+                <div class="resource-card group">
+                    <div
+                        class="card-content flex flex-col h-full border border-stone-100 rounded-3xl overflow-hidden transition-all duration-500 hover:border-stone-400 hover:shadow-2xl hover:shadow-stone-500/10 bg-white">
+                        <a href="https://youtube.com/playlist?list=PLjBkTEtM_Tw_cQi2PXrD9zSdFFsr4NQ5U&si=jea7xh4TCVlr_Wnp"
+                            target="_blank" class="block relative aspect-[16/10] overflow-hidden group/cover">
+                            <img src="YT thumbnails/hqdefault.jpg" alt="Film Theory"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover/cover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-black/40 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center">
+                                <div
+                                    class="w-14 h-14 bg-stone-800 rounded-full flex items-center justify-center text-white shadow-lg transform scale-90 group-hover/cover:scale-100 transition-transform duration-500">
+                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span
+                                class="category-tag text-[10px] font-bold tracking-tighter uppercase mb-4 py-1 px-3 bg-stone-100 text-stone-600 rounded-full w-fit">Film
+                                Theory</span>
+                            <h3 class="resource-title text-2xl font-medium mb-4 font-mono text-stone-800">The Visual
+                                Language</h3>
+                            <p class="resource-description text-sm text-stone-500 mb-8 flex-grow leading-relaxed">
+                                Story telling.</p>
+                            <div class="card-footer flex justify-between items-center border-t border-stone-50 pt-6">
+                                <a href="https://youtube.com/playlist?list=PLjBkTEtM_Tw_cQi2PXrD9zSdFFsr4NQ5U&si=jea7xh4TCVlr_Wnp"
+                                    target="_blank"
+                                    class="source-link flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
+                                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                                    <span class="text-xs uppercase tracking-widest font-mono">Watch</span>
+                                </a>
+                                <div class="source-icon">
+                                    <i data-lucide="play"
+                                        class="w-5 h-5 text-stone-300 group-hover:text-stone-800 transition-colors"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Art Card -->
+                <div class="resource-card group">
+                    <div
+                        class="card-content flex flex-col h-full border border-stone-100 rounded-3xl overflow-hidden transition-all duration-500 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-500/10 bg-white">
+                        <a href="https://youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds&si=68d0IyJG3zzmGqAW"
+                            target="_blank" class="block relative aspect-[16/10] overflow-hidden group/cover">
+                            <img src="YT thumbnails/hqdefault (1).jpg" alt="Design Mastery"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover/cover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-black/40 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center">
+                                <div
+                                    class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center text-white shadow-lg transform scale-90 group-hover/cover:scale-100 transition-transform duration-500">
+                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span
+                                class="category-tag text-[10px] font-bold tracking-tighter uppercase mb-4 py-1 px-3 bg-emerald-50 text-emerald-600 rounded-full w-fit">Design</span>
+                            <h3 class="resource-title text-2xl font-medium mb-4 font-mono text-stone-800">Digital Canvas
+                                Mastery</h3>
+                            <p class="resource-description text-sm text-stone-500 mb-8 flex-grow leading-relaxed">
+                                CCNA!!</p>
+                            <div class="card-footer flex justify-between items-center border-t border-stone-50 pt-6">
+                                <a href="https://youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds&si=68d0IyJG3zzmGqAW"
+                                    target="_blank"
+                                    class="source-link flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
+                                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                                    <span class="text-xs uppercase tracking-widest font-mono">Watch</span>
+                                </a>
+                                <div class="source-icon">
+                                    <i data-lucide="play"
+                                        class="w-5 h-5 text-stone-300 group-hover:text-emerald-500 transition-colors"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
