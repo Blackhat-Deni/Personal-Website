@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Deni</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9f6 !important;
+            color: #1c1917 !important;
+            margin: 0;
+        }
+
+        .font-mono-jb {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom, #d6d3d1, #d6d3d1 4px, transparent 4px, transparent 8px);
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            /* Center marker on the line */
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: white;
+            border: 2px solid #d6d3d1;
+            border-radius: 50%;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-node.active::before {
+            background-color: #1c1917;
+            border-color: #1c1917;
+            box-shadow: 0 0 0 4px rgba(28, 25, 23, 0.1);
+        }
+
+        .timeline-node:hover::before {
+            border-color: #1c1917;
+            transform: scale(1.2);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 800px) {
+            .experience-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8rem;
+            }
+        }
+
+        .flower-node::before {
+            display: none;
+        }
+
+        .flower-node .flower-icon {
+            position: absolute;
+            left: -2.7rem;
+            top: 0.1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #d6d3d1;
+            z-index: 20;
+            background-color: #faf9f6;
+            padding: 2px;
+        }
+
+        .flower-node.active .flower-icon {
+            color: #1c1917;
+        }
+
+        .associate-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .associate-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 84rem; margin: 0 auto; padding: 5rem 1.5rem;">
+
+        <!-- Hero Header -->
+        <header style="margin-bottom: 6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+            <div>
+                <h1
+                    style="font-size: 3.75rem; font-weight: 300; letter-spacing: -0.025em; margin: 0 0 1rem 0; color: #1c1917;">
+                    About Me</h1>
+                <p
+                    style="font-size: 1.25rem; color: #78716c; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">
+                    Deni Pun Magar</p>
+            </div>
+        </header>
+
+        <!-- Personal Dossier Section -->
+        <section style="margin-bottom: 6rem;">
+            <h2
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6em; color: #a8a29e; margin-bottom: 3rem; font-family: 'JetBrains Mono', monospace;">
+                Personal Dossier</h2>
+            <div
+                style="background: white; border-radius: 1.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #f5f5f4; overflow: hidden;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <!-- Left Column -->
+                    <div style="padding: 2.5rem; border-right: 1px solid #fafaf9;">
+                        <div style="margin-bottom: 2.5rem;">
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Legal Name</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">Deni Pun Magar
+                            </p>
+                        </div>
+                        <div style="margin-bottom: 2.5rem;">
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Date of Birth</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;"> December 29,
+                                2004</p>
+                        </div>
+                        <div>
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Birthplace</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">Provincial
+                                Hospital, Surkhet, Nepal
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Right Column -->
+                    <div style="padding: 2.5rem;">
+                        <div style="margin-bottom: 2.5rem;">
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Blood Type</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">B+</p>
+                        </div>
+                        <div style="margin-bottom: 2.5rem;">
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Nationality</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">Nepalese</p>
+                        </div>
+                        <div>
+                            <p
+                                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; font-family: 'JetBrains Mono', monospace; margin: 0 0 0.5rem 0;">
+                                Mother Tongue</p>
+                            <p style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">Nepali / Magar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Education & Experience -->
+        <section style="margin-bottom: 6rem;">
+            <div class="experience-grid">
+
+                <!-- Left Column: Education -->
+                <div>
+                    <h2
+                        style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; color: #1c1917; margin-bottom: 3.5rem; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #1c1917; padding-left: 1rem;">
+                        Education</h2>
+
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+
+                        <!-- Nursery - UKG -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">Nursery - UKG
+                            </h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">South
+                                Asian
+                                Scholars Academy (SASA), B.N.N.P 3, Surkhet
+                            </p>
+                        </div>
+
+                        <!-- 1 - 2 -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">1 - 2</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">St.
+                                Mary's
+                                Co.Ed. School, Gandaki Line , Surkhet</p>
+                        </div>
+
+                        <!-- 3 - 4 -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">3 - 4</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">Army
+                                Public
+                                School, Nahan, Himachal Pradesh, India</p>
+                        </div>
+
+                        <!-- 5 - 8 -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">5 - 8</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">South
+                                Asia
+                                Scholars Academy (SASA), B.N.N.P 3, Surkhet</p>
+                        </div>
+
+                        <!-- 9 - 10 -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">9 - 10</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">Jana
+                                Namuna
+                                Secondary School, B.N.N.P 6, Surkhet</p>
+                        </div>
+
+                        <!-- 11 - 12 -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 500; color: #1c1917; margin: 0;">11 - 12</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">Usha
+                                Bal
+                                Vatika College, B.N.N.P 6, Surkhet</p>
+                        </div>
+
+                        <!-- Active Milestone: BIM -->
+                        <div class="timeline-node active flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.25rem; font-weight: 600; color: #1c1917; margin: 0;">Bachelors In
+                                Information Management</h3>
+                            <p style="font-size: 1.1rem; font-weight: 700; color: #1c1917; margin: 0.5rem 0 0 0;">
+                                Surkhet Model
+                                College, B.N.N.P 7, Surkhet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Work Experience -->
+                <div>
+                    <h2
+                        style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4em; color: #1c1917; margin-bottom: 3.5rem; font-family: 'JetBrains Mono', monospace; border-left: 3px solid #1c1917; padding-left: 1rem;">
+                        Work Experience</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+
+                        <!-- Namlo Hotel -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Captain Waiter
+                            </h3>
+                            <p style="font-size: 0.95rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0 0;">Namlo
+                                Hotel</p>
+                            <p
+                                style="font-size: 0.75rem; color: #a8a29e; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; margin-top: 0.4rem;">
+                                4 Months</p>
+                        </div>
+
+                        <!-- American Corner -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Librarian</h3>
+                            <p style="font-size: 0.95rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0 0;">
+                                American Corner Surkhet</p>
+                            <p
+                                style="font-size: 0.75rem; color: #a8a29e; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; margin-top: 0.4rem;">
+                                1 Month</p>
+                        </div>
+
+                        <!-- SCC&I -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Program
+                                Co-ordinator</h3>
+                            <p style="font-size: 0.95rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0 0;">
+                                Surkhet Chamber of Commerce and Industry</p>
+                            <p
+                                style="font-size: 0.75rem; color: #a8a29e; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; margin-top: 0.4rem;">
+                                3 Months</p>
+                        </div>
+
+                        <!-- Ever Bright Computer Institution -->
+                        <div class="timeline-node flower-node">
+                            <i data-lucide="flower" class="flower-icon"></i>
+                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Computer Teacher
+                            </h3>
+                            <p style="font-size: 0.95rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0 0;">Ever
+                                Bright Computer Institution</p>
+                            <p
+                                style="font-size: 0.75rem; color: #a8a29e; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; margin-top: 0.4rem;">
+                                1 Month</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- My Associates Section -->
+        <section style="margin-bottom: 4rem;">
+            <div
+                style="background: white; border-radius: 1rem; border: 1px solid #f5f5f4; padding: 1.5rem; max-width: 60rem;">
+                <h2
+                    style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: #a8a29e; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; border-left: 2px solid #e7e5e4; padding-left: 0.75rem;">
+                    In Association With:</h2>
+                <div class="associate-grid font-mono-jb">
+                    <p
+                        style="font-size: 0.75rem; color: #78716c; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        Surkhet Chamber Of Commerce and Industry (SCOCI)
+                    </p>
+                    <p
+                        style="font-size: 0.75rem; color: #78716c; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        Athena Organization
+                    </p>
+                    <p
+                        style="font-size: 0.75rem; color: #78716c; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        Tatapani Youth Club
+                    </p>
+                    <p
+                        style="font-size: 0.75rem; color: #78716c; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        Tatapani Union
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 8rem; padding-top: 2rem; border-top: 1px solid #f5f5f4; text-align: center;">
+            <p
+                style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5em; color: #d6d3d1; font-family: 'JetBrains Mono', monospace;">
+                Deni &reg; 2026</p>
+        </footer>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

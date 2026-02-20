@@ -6,21 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entryway</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=debug123">
 </head>
 
 <body class="entryway fade-in">
     <video autoplay muted loop playsinline id="bg-video">
-        <source src="background.mp4" type="video/mp4">
+        <source src="assets/videos/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="content-wrapper">
         <blockquote id="quote">
             "He who has a why to live for can bear almost any how."
         </blockquote>
-        <a href="home.html" class="enter-btn">Begin</a>
+        <a href="pages/home.html" class="enter-btn ui-button">Begin</a>
     </div>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <!-- Netlify Identity Widget (for CMS login redirect) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

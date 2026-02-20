@@ -2,31 +2,163 @@ backend:
   name: git-gateway
   branch: main
 
-# This line enables local development mode
+# Enable local development mode (use npx decap-server to test locally)
 local_backend: true
 
-media_folder: "IMG" # Folder where uploaded images will be stored
-public_folder: "IMG"
+# Media settings — where uploaded images go
+media_folder: "assets/images"
+public_folder: "../assets/images"
 
 collections:
-  - name: "gallery"
-    label: "Gallery Wall"
-    file: "gallery.json"
-    label_singular: "Gallery Item"
-    fields:
-      - label: "Gallery items"
-        name: "gallery"
-        widget: "list"
+  # ═══════════════════════════════════════════
+  # LIBRARY — Books on the Bookshelf
+  # ═══════════════════════════════════════════
+  - name: "books"
+    label: "📚 Library"
+    description: "Manage your bookshelf collection"
+    files:
+      - name: "booklist"
+        label: "Book Collection"
+        file: "data/books.json"
+        format: "json"
         fields:
-          - { label: "ID", name: "id", widget: "number" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Image", name: "url", widget: "image" }
-          - label: "Layout Span"
-            name: "span"
-            widget: "select"
-            options: 
-              - { label: "Small (4x3)", value: "md:col-span-4 md:row-span-3" }
-              - { label: "Medium (5x4)", value: "md:col-span-5 md:row-span-4" }
-              - { label: "Large (8x6)", value: "md:col-span-8 md:row-span-6" }
-              - { label: "Full Width", value: "md:col-span-12 md:row-span-3" }
-            default: "md:col-span-4 md:row-span-3"
+          - label: "Books"
+            name: "items"
+            widget: "list"
+            label_singular: "Book"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Cover Image Filename", name: "cover", widget: "string", hint: "Filename in assets/images/books/ (e.g. Mastery.jpg)" }
+              - { label: "Spine Color", name: "spineColor", widget: "color", default: "#333333" }
+
+  # ═══════════════════════════════════════════
+  # MUSIC — CDs and Albums
+  # ═══════════════════════════════════════════
+  - name: "music"
+    label: "🎵 Music"
+    description: "Manage your favourite songs and albums"
+    files:
+      - name: "musicdata"
+        label: "Songs & Albums"
+        file: "data/music.json"
+        format: "json"
+        fields:
+          - label: "Songs (CDs)"
+            name: "cds"
+            widget: "list"
+            label_singular: "Song"
+            summary: "{{fields.title}} — {{fields.artist}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Artist", name: "artist", widget: "string" }
+              - { label: "Cover Image", name: "cover", widget: "string", hint: "Path like ../assets/images/music/songs/cover.jpg" }
+              - { label: "Favourite Song", name: "favSong", widget: "string" }
+              - { label: "Personal Note", name: "note", widget: "text" }
+
+          - label: "Albums"
+            name: "albums"
+            widget: "list"
+            label_singular: "Album"
+            summary: "{{fields.title}} — {{fields.artist}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Artist", name: "artist", widget: "string" }
+              - { label: "Cover Image", name: "cover", widget: "string", hint: "Path like ../assets/images/music/albumcover.jpg" }
+              - { label: "Favourite Song", name: "favSong", widget: "string", required: false }
+              - { label: "Personal Note", name: "note", widget: "text" }
+
+  # ═══════════════════════════════════════════
+  # CINEMA — Films, TV, Mini-Series, Sitcoms
+  # ═══════════════════════════════════════════
+  - name: "cinema"
+    label: "🎬 Cinema"
+    description: "Manage your top films and shows"
+    files:
+      - name: "cinemadata"
+        label: "Films & Shows"
+        file: "data/cinema.json"
+        format: "json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            label_singular: "Category"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Category Name", name: "name", widget: "string", hint: "e.g. Films, TV Series, Mini-Series, Sitcoms" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                label_singular: "Title"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Director • Year" }
+                  - { label: "Cover Image", name: "cover", widget: "string", hint: "Path like ../assets/images/movies/poster.jpg" }
+                  - { label: "Personal Note", name: "note", widget: "text" }
+
+  # ═══════════════════════════════════════════
+  # COMPENDIUM — Learning Resources
+  # ═══════════════════════════════════════════
+  - name: "compendium"
+    label: "📖 Compendium"
+    description: "Manage curated learning paths and resources"
+    files:
+      - name: "compendiumdata"
+        label: "Resources"
+        file: "data/compendium.json"
+        format: "json"
+        fields:
+          - label: "Resources"
+            name: "resources"
+            widget: "list"
+            label_singular: "Resource"
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string", hint: "e.g. Python, Film Theory, Design" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Thumbnail", name: "thumbnail", widget: "string", hint: "Path like ../assets/images/thumbnails/thumb.jpg" }
+              - { label: "URL", name: "url", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["youtube", "article", "course"]
+                default: "youtube"
+              - label: "Accent Color"
+                name: "accent"
+                widget: "select"
+                options: ["blue", "stone", "emerald"]
+                default: "blue"
+
+  # ═══════════════════════════════════════════
+  # GALLERY — Photo Wall
+  # ═══════════════════════════════════════════
+  - name: "gallery"
+    label: "🖼️ Gallery"
+    description: "Manage gallery photos"
+    files:
+      - name: "gallerydata"
+        label: "Photo Wall"
+        file: "data/gallery.json"
+        format: "json"
+        fields:
+          - label: "Gallery Items"
+            name: "gallery"
+            widget: "list"
+            label_singular: "Photo"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image URL", name: "url", widget: "string" }
+              - label: "Layout Span"
+                name: "span"
+                widget: "select"
+                options:
+                  - { label: "Small (4x3)", value: "md:col-span-4 md:row-span-3" }
+                  - { label: "Medium (5x4)", value: "md:col-span-5 md:row-span-4" }
+                  - { label: "Large (8x6)", value: "md:col-span-8 md:row-span-6" }
+                  - { label: "Full Width", value: "md:col-span-12 md:row-span-3" }
+                default: "md:col-span-4 md:row-span-3"

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music — Albums I Love</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css?v=debug123">
+</head>
+
+<body class="theme-music fade-in">
+    <div class="music-container">
+        <header class="cinema-header">
+
+        </header>
+
+        <div class="songs-section">
+
+            <div id="songs-grid" class="songs-grid">
+
+                <!-- Data loaded from music.json -->
+            </div>
+            <p class="cd-tagline">Songs I Carved Deep Into My Heart</p>
+        </div>
+
+        <header class="music-header">
+            <h1>Albums I Consider Perfect!!!</h1>
+        </header>
+
+        <div id="album-grid" class="album-grid">
+            <!-- Data loaded from music.json -->
+        </div>
+    </div>
+
+    <div class="playlist-section">
+        <div class="mb-6 text-center">
+            <h2 class="text-3xl font-serif font-bold text-stone-200 mb-0">My Playlists:</h2>
+        </div>
+        <div class="playlists-grid">
+            <!-- Awesome Mix! -->
+            <div class="playlist-item">
+                <a href="https://youtube.com/playlist?list=PL5XQjfwUMb1lty5zIwWj74FDK3RLKKpD6&si=6TZEL-WUDbG9Wrmq"
+                    target="_blank" class="playlist-cover-link">
+                    <img src="../assets/images/music/Awsome Mix!.jpg" alt="Awesome Mix!" class="playlist-cover-img">
+                    <div class="playlist-cover-overlay">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </a>
+                <h2>Awesome Mix!</h2>
+                <p>My everyday go-to playlist.</p>
+            </div>
+
+            <!-- Nepali Mix! -->
+            <div class="playlist-item">
+                <a href="https://youtube.com/playlist?list=PL5XQjfwUMb1l2SHyoirj-dA0TcSm9iDK_&si=XcT4s17Qfne1FdcI"
+                    target="_blank" class="playlist-cover-link">
+                    <img src="../assets/images/music/Nepali Mix!.jpg" alt="Nepali Mix!" class="playlist-cover-img">
+                    <div class="playlist-cover-overlay">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </a>
+                <h2>Nepali Mix!</h2>
+                <p>A curated collection of my favorite Nepali tracks.</p>
+            </div>
+
+            <!-- Soundtracks! -->
+            <div class="playlist-item">
+                <a href="https://youtube.com/playlist?list=PL5XQjfwUMb1kxHnTUfW-7QZrxevlVIbaf&si=-qk9KMghF8uPR-RY"
+                    target="_blank" class="playlist-cover-link">
+                    <img src="../assets/images/music/Soundtracks!.jpg" alt="Soundtracks!" class="playlist-cover-img">
+                    <div class="playlist-cover-overlay">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </a>
+                <h2>Soundtracks!</h2>
+                <p>Cinematic soundscapes and orchestral favorites.</p>
+            </div>
+
+            <!-- Hindi Mix! -->
+            <div class="playlist-item">
+                <a href="https://youtube.com/playlist?list=PL5XQjfwUMb1niolj4vUMHYTpLwaPz25oE&si=sZs9ig0EPec6qcGg"
+                    target="_blank" class="playlist-cover-link">
+                    <img src="../assets/images/music/Hindi Mix!.jpg" alt="Hindi Mix!" class="playlist-cover-img">
+                    <div class="playlist-cover-overlay">
+                        <span class="play-icon">▶</span>
+                    </div>
+                </a>
+                <h2>Hindi Mix!</h2>
+                <p>A curated collection of my favorite Hindi tracks.</p>
+            </div>
+        </div>
+        <div class="mt-8 text-right border-t border-black/5 pt-4">
+            <p class="text-stone-500 font-mono font-normal text-[10px] uppercase tracking-[0.3em]">(I
+                hand-picked
+                every single song!)</p>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Diagnostic Logger -->
+    <div id="debug-console"
+        style="background: #1a1a1a; color: #00ff00; font-family: monospace; padding: 20px; margin: 20px; border: 1px solid #333; font-size: 12px; max-height: 200px; overflow-y: auto;">
+        <h3 style="color: #00ff00; margin-top: 0;">--- System Log ---</h3>
+        <pre id="debug-log" style="margin: 0; white-space: pre-wrap;">Waiting for initialization...</pre>
+    </div>
+
+    <!-- Note Overlay for Albums -->
+    <div id="note-overlay" class="note-overlay">
+        <div class="note-content">
+            <span class="close-note">&times;</span>
+            <div class="note-text-container">
+                <div class="note-album-cover">
+                    <img id="note-cover" src="" alt="Album Cover">
+                </div>
+                <h2 id="note-album-title">Album Title</h2>
+                <p id="note-album-artist">Artist Name</p>
+                <div class="note-divider"></div>
+                <p id="note-text">Personal note goes here...</p>
+                <div class="fav-song-display">
+                    <span class="fav-label">Favourite Song:</span>
+                    <span id="note-fav-song">Song Name</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const log = (msg) => {
+            const el = document.getElementById('debug-log');
+            if (el) el.innerHTML += '\n[' + new Date().toLocaleTimeString() + '] ' + msg;
+            console.log(msg);
+        };
+
+        async function loadMusicData() {
+            log('Starting music data fetch...');
+            try {
+                const response = await fetch('../data/music.json?v=' + Date.now());
+                log('Fetch response status: ' + response.status);
+
+                if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+
+                const data = await response.json();
+                log('JSON loaded. CDs: ' + (data.cds ? data.cds.length : 0) + ', Albums: ' + (data.albums ? data.albums.length : 0));
+
+                const songsGrid = document.getElementById('songs-grid');
+                const albumGrid = document.getElementById('album-grid');
+
+                if (!data.cds || !data.albums) {
+                    throw new Error('JSON structure invalid: missing cds or albums key');
+                }
+
+                // Render CDs (Note: uses += to keep the hardcoded test for now)
+                data.cds.forEach(cd => {
+                    songsGrid.innerHTML += `
+                        <div class="card ui-card cd-card" data-fav-song="${cd.favSong}" data-note="${cd.note}">
+                            <div class="cd-visual">
+                                <div class="cd-jewel-case"></div>
+                                <div class="cd-disc">
+                                    <img src="${encodeURI(cd.cover)}" alt="${cd.title}" onerror="this.onerror=null;this.src='../assets/images/music/cd.jpg';console.error('Failed to load: ' + cd.cover)">
+                                </div>
+                                <div class="cd-center-hole"></div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">${cd.title}</h3>
+                                <p class="card-subtitle">${cd.artist}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                log('CDs rendered to DOM');
+
+                // Render Albums
+                albumGrid.innerHTML = data.albums.map(album => `
+                    <div class="card ui-card album-card" data-note="${album.note}" ${album.favSong ? `data-fav-song="${album.favSong}"` : ''}>
+                        <div class="card-image">
+                            <div class="album-main-visual">
+                                <div class="vinyl-record"></div>
+                                <div class="music-card-image">
+                                    <img src="${encodeURI(album.cover)}" alt="${album.title}" onerror="this.onerror=null;this.src='../assets/images/music/cd.jpg';console.error('Failed to load: ' + album.cover)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">${album.title}</h3>
+                            <p class="card-subtitle">${album.artist}</p>
+                        </div>
+                    </div>
+                `).join('');
+                log('Albums rendered to DOM');
+
+            } catch (error) {
+                log('ERROR: ' + error.message);
+                console.error('MUSIC DATA LOAD ERROR: ' + error.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMusicData);
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

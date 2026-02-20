@@ -1,0 +1,96 @@
+{
+    "categories": [
+        {
+            "name": "Films",
+            "items": [
+                {
+                    "title": "In The Mood For Love",
+                    "subtitle": "Wong Kar-wai • 2000",
+                    "cover": "../assets/images/movies/In the Mood for Love.jpg",
+                    "note": "The cinematography of this film represents the peak of visual storytelling. Every frame is a painting, capturing the unspoken yearning and shared loneliness of two people in a way that feels both timeless and deeply intimate."
+                },
+                {
+                    "title": "Lost In Translation",
+                    "subtitle": "Sofia Coppola • 2003",
+                    "cover": "../assets/images/movies/lost in translation.jpg",
+                    "note": "A hauntingly beautiful explore of connection and the quiet, often overlooked moments that define our lives. The way it portrays the feeling of being 'lost' in a foreign city, both literally and emotionally, is incredibly resonant."
+                },
+                {
+                    "title": "The Wind Rises",
+                    "subtitle": "Hayao Miyazaki • 2013",
+                    "cover": "../assets/images/movies/The Wind Rises.jpg",
+                    "note": "If i recommend this movie to you, I love you!!!"
+                },
+                {
+                    "title": "The Godfather Part II",
+                    "subtitle": "Francis Ford Coppola • 1974",
+                    "cover": "../assets/images/movies/The godfather II.jpg",
+                    "note": "Storytelling through eyes!!! Another level shit"
+                },
+                {
+                    "title": "Oppenheimer",
+                    "subtitle": "Christopher Nolan • 2023",
+                    "cover": "../assets/images/movies/Oppenheimer.jpg",
+                    "note": "Prometheus stole fire from the gods and gave it to man. For this he was chained to a rock and tortured for eternity...Nahhh seriously WTF!!"
+                }
+            ]
+        },
+        {
+            "name": "TV Series",
+            "items": [
+                {
+                    "title": "The Wire",
+                    "subtitle": "David Simon • 2002",
+                    "cover": "../assets/images/movies/The wire.jpg",
+                    "note": "A gritty, uncompromising look at the drug trade in Baltimore. It's not just a show; it's a profound social commentary that meticulously deconstructs the interconnectedness of institutions and the people within them."
+                },
+                {
+                    "title": "Breaking Bad",
+                    "subtitle": "Vince Gilligan • 2008",
+                    "cover": "../assets/images/movies/Breaking bad.jpg",
+                    "note": "A masterclass in character development. Walter White's transformation from a mild-mannered teacher to a ruthless kingpin is both terrifying and fascinating, showcasing the dark depths of human ambition."
+                },
+                {
+                    "title": "The Sopranos",
+                    "subtitle": "David Chase • 1999",
+                    "cover": "../assets/images/movies/The sopranos.jpg",
+                    "note": "Imagine being a mob boss and going to therapy. This series helps me understand psychological depth on another level."
+                }
+            ]
+        },
+        {
+            "name": "Mini-Series",
+            "items": [
+                {
+                    "title": "Chernobyl",
+                    "subtitle": "Craig Mazin • 2019",
+                    "cover": "../assets/images/movies/Chernobyl.jpg",
+                    "note": "A chilling and meticulously researched account of the 1986 disaster. It powerfully conveys the human cost of bureaucratic failure and the courage of those who faced the unthinkable."
+                },
+                {
+                    "title": "The Queen's Gambit",
+                    "subtitle": "Scott Frank • 2020",
+                    "cover": "../assets/images/movies/Queens Gambit.jpg",
+                    "note": "A beautifully crafted coming-of-age story set against the backdrop of competitive chess. It's a visually stunning and emotionally nuanced exploration of genius, addiction, and the search for belonging."
+                }
+            ]
+        },
+        {
+            "name": "Sitcoms",
+            "items": [
+                {
+                    "title": "Friends",
+                    "subtitle": "David Crane • 1994",
+                    "cover": "../assets/images/movies/Friends.jpg",
+                    "note": "The ultimate comfort show. It perfectly captures the essence of friendship and the relatable struggles of young adulthood with humor, heart, and characters that feel like old friends."
+                },
+                {
+                    "title": "The Office",
+                    "subtitle": "Greg Daniels • 2005",
+                    "cover": "../assets/images/movies/The office.jpg",
+                    "note": "A hilarious and surprisingly heartfelt mockumentary that finds humor in the mundane and everyday life. The characters are weirdly endearing, making Dunder Mifflin feel like a second home."
+                }
+            ]
+        }
+    ]
+}

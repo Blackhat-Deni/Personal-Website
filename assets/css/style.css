@@ -1,0 +1,4026 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&family=Pinyon+Script&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&family=Syne:wght@400;700;800&display=swap');
+
+:root {
+    /* Color Palette - Vibe Code: Dark, moody, tech */
+    --bg-color: #000000;
+    --text-color: #e0e0e0;
+    --accent-color: #33ffcc;
+    /* Cyan/Teal accent */
+    --secondary-bg: #0a0a0a;
+    --border-color: #333;
+
+    /* Typography */
+    --font-main: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    /* For the quote */
+    --font-mono: 'Space Mono', monospace;
+    /* For technical details */
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Transitions */
+    --transition-speed: 0.5s;
+}
+
+/* ==========================================================================
+   GLOBAL UI SYSTEM - Standardized Blueprint
+   ========================================================================== */
+
+/* 1. Standardized Cards */
+.ui-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Standardized Buttons & Interactive Links */
+.ui-button {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--text-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.ui-button:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* 3. Standardized Sections */
+.ui-section {
+    padding: var(--spacing-xl) 0;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+
+/* ==========================================================================
+   Atmospheric Themes
+   ========================================================================== */
+
+/* 1. Cinema: Same tone as Home Page */
+body.theme-cinema {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #E50914;
+    --font-main: 'Cormorant Garamond', serif;
+    --font-serif: 'Cinzel', serif;
+    --font-modern: 'Syne', sans-serif;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%), #ffffff;
+    color: var(--text-color);
+}
+
+body.theme-cinema h1,
+body.theme-cinema h2,
+body.theme-cinema h3,
+body.theme-cinema .section-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    background: linear-gradient(to bottom, #fff, #bdbdbd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.theme-cinema .cinema-nav a,
+body.theme-cinema .back-link {
+    color: var(--accent-color) !important;
+    font-family: var(--font-modern), sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+/* 2. Library: Same tone as Home Page */
+body.theme-library {
+    --bg-color: #ffffff;
+    --text-color: #2c1e1e;
+    --accent-color: #5D4037;
+    --font-main: 'EB Garamond', serif;
+    --font-serif: 'Pinyon Script', cursive;
+    /* Same gradient as home page/music/cinema */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%), #ffffff;
+    color: var(--text-color);
+}
+
+body.theme-library h1,
+body.theme-library .shelf-header h1 {
+    font-family: 'Pinyon Script', cursive !important;
+    font-size: 4rem !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+}
+
+body.theme-library p,
+body.theme-library span,
+body.theme-library .narrative-text p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+}
+
+/* 3. Music: Same tone as Home Page hero */
+body.theme-music {
+    --bg-color: #ffffff;
+    --text-color: #1e1b26;
+    --accent-color: #a855f7;
+    --font-main: 'Inter', sans-serif;
+    --font-serif: 'Outfit', sans-serif;
+    --font-cursive: 'Pinyon Script', cursive;
+
+    /* Same gradient as home page bio-intro overlay, on top of white */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%), #ffffff;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+body.theme-music h1,
+body.theme-music h2,
+body.theme-music h3,
+body.theme-music .music-header h1 {
+    font-family: 'Outfit', sans-serif !important;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+body.theme-music p,
+body.theme-music .music-tagline,
+body.theme-music .playlist-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+
+/* 4. My Projects: Industrial Blueprint / Terminal */
+body.theme-projects {
+    --bg-color: #0F172A;
+    /* Midnight Blue */
+    --text-color: #4ADE80;
+    /* Phosphor Green */
+    --accent-color: #22d3ee;
+    /* Cyan */
+    --font-main: 'Space Mono', monospace;
+    --font-serif: 'Space Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.theme-projects h1,
+body.theme-projects h2,
+body.theme-projects h3 {
+    font-family: 'Space Mono', monospace !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color) !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+body.theme-projects .folder-tab {
+    background: rgba(74, 222, 128, 0.1) !important;
+    border-color: var(--text-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.theme-projects .back-nav a {
+    color: var(--accent-color) !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    opacity: 0;
+    /* Initial state for fade-in */
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Entryway Specifics */
+.entryway {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6) grayscale(20%);
+    /* Dim and desaturate for vibe */
+}
+
+.content-wrapper {
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+#quote {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.enter-btn {
+    /* Inherits from .ui-button base class */
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Home / Identity Specifics */
+.container {
+    max-width: 1400px;
+    /* Increased width for stretching */
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Single column full width */
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Light Theme Override for Home Page */
+body.home {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --secondary-bg: #f4f4f4;
+    --border-color: #e0e0e0;
+    --accent-color: #0066cc;
+    /* A nice blue/tech color for light mode */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.main-content h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-mono);
+}
+
+.projects {
+    margin-top: var(--spacing-xl);
+}
+
+.project-card {
+    background: var(--secondary-bg);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.2s;
+    /* Inherits base shape/hover from .ui-card if applied in HTML */
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+/* Video Showcase Section */
+.video-showcase {
+    margin: var(--spacing-xl) 0;
+    width: 100%;
+}
+
+.video-container {
+    width: 100%;
+    min-height: 200px;
+    background: #111;
+    /* Dark placeholder while loading */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    line-height: 0;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9);
+}
+
+.video-container:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 102, 204, 0.1);
+}
+
+.sidebar {
+    padding-left: var(--spacing-lg);
+    border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-top: var(--spacing-lg);
+    }
+}
+
+
+
+.social-links {
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-lg);
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.email-text {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-top: var(--spacing-md);
+    opacity: 0.8;
+    user-select: all;
+    /* Makes it easy to copy */
+}
+
+/* Floating Socials Styling */
+.floating-socials {
+    position: absolute;
+    top: 40px;
+    /* Locked to top of the page */
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-md);
+    pointer-events: none;
+}
+
+.floating-socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.floating-socials li {
+    pointer-events: auto;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Staggered alignment removed for perfect vertical alignment */
+
+.floating-socials li:hover {
+    transform: scale(1.1);
+}
+
+.floating-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-socials a i {
+    width: 20px;
+    height: 20px;
+}
+
+.floating-socials a:hover {
+    opacity: 1;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.floating-socials .email-text {
+    pointer-events: auto;
+    margin-top: 15px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    background: transparent;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .floating-socials {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Archive / Gallery Specifics */
+.archive-header {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: var(--spacing-md);
+    padding: 0 var(--spacing-lg) var(--spacing-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
+
+.grid-item {
+    break-inside: avoid;
+    margin-bottom: var(--spacing-md);
+    border-radius: 4px;
+    /* Base styles from .ui-card */
+}
+
+.placeholder-img {
+    background: #333;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    margin-bottom: var(--spacing-sm);
+}
+
+.site-nav {
+    margin-top: var(--spacing-lg);
+}
+
+.home-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content,
+.bio-dashboard {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Bio Layout Options --- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Option 1: Currently Dashboard */
+.bio-dashboard .bio-intro {
+    margin-bottom: 0;
+    /* Remove bottom margin to let focal trio overlap if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12rem 2rem 8rem 2rem;
+    /* Increased top padding */
+    min-height: 100vh;
+    /* Full viewport height */
+    /* Full-width breakout */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: -10rem;
+    /* Pull up further to cover top spacing */
+    /* Pull up to cover top spacing if any */
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    z-index: 10;
+    background: transparent !important;
+    /* Ensure no background color */
+}
+
+.bio-intro-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 0;
+}
+
+/* Overlay for better text readability */
+.bio-dashboard .bio-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%);
+    border-radius: 0;
+    z-index: 0;
+}
+
+.album-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Ensure content is above overlay */
+.bio-dashboard .bio-intro>* {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 3rem auto;
+    /* Border removed as requested */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero Text Styling */
+.bio-dashboard h1 {
+    color: #ffffff;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4rem;
+    font-weight: normal;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.focal-trio {
+    position: relative;
+    z-index: 5;
+    background: #ffffff;
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   3D Gramophone — Music Section  (matches reference Gramophone.jpg)
+   ========================================================================== */
+
+/* --- Animations --- */
+@keyframes vinyl-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes vinyl-shimmer {
+
+    0%,
+    100% {
+        opacity: 0.12;
+    }
+
+    50% {
+        opacity: 0.32;
+    }
+}
+
+@keyframes horn-pulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(212, 168, 83, 0.25));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.5));
+    }
+}
+
+/* --- Scene wrapper --- */
+.gram-scene {
+    width: 220px;
+    height: 240px;
+    perspective: 800px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .gram-scene {
+    transform: translateY(-6px) scale(1.04);
+}
+
+.gram-body {
+    width: 200px;
+    height: 230px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(8deg) rotateY(18deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .gram-body {
+    transform: rotateX(5deg) rotateY(12deg);
+}
+
+/* ======================
+   MAHOGANY CABINET
+   ====================== */
+.gram-cabinet {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 82px;
+}
+
+/* Top surface of the box */
+.gram-cab-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 14px;
+    background: linear-gradient(180deg, #6B3A1F 0%, #5C2E15 50%, #4A2410 100%);
+    border-radius: 3px 3px 0 0;
+    box-shadow:
+        inset 0 2px 4px rgba(255, 200, 120, 0.15),
+        0 -1px 3px rgba(0, 0, 0, 0.2);
+    /* Wood grain overlay */
+    background-image: repeating-linear-gradient(85deg,
+            transparent, transparent 6px,
+            rgba(0, 0, 0, 0.06) 6px, rgba(0, 0, 0, 0.06) 7px);
+}
+
+/* Main body of the cabinet */
+.gram-cab-body {
+    position: absolute;
+    top: 14px;
+    left: 3px;
+    width: 144px;
+    height: 44px;
+    background: linear-gradient(180deg, #5C2E15 0%, #4A2410 40%, #3B1C0B 100%);
+    box-shadow:
+        inset 0 2px 6px rgba(255, 180, 100, 0.1),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.4),
+        2px 4px 12px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    /* Wood grain */
+    background-image: repeating-linear-gradient(88deg,
+            transparent, transparent 5px,
+            rgba(0, 0, 0, 0.05) 5px, rgba(0, 0, 0, 0.05) 6px);
+}
+
+/* Decorative trim lines */
+.gram-cab-trim-top {
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 200, 120, 0.2), transparent);
+    border-radius: 1px;
+}
+
+.gram-cab-panel {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
+    border: 1px solid rgba(255, 180, 100, 0.08);
+    border-radius: 2px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+}
+
+.gram-cab-trim-bottom {
+    position: absolute;
+    bottom: 3px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 200, 120, 0.15), transparent);
+    border-radius: 1px;
+}
+
+/* Wider base / plinth */
+.gram-cab-base {
+    position: absolute;
+    top: 58px;
+    left: -4px;
+    width: 158px;
+    height: 16px;
+    background: linear-gradient(180deg, #4A2410 0%, #3B1C0B 60%, #2C1508 100%);
+    border-radius: 2px 2px 4px 4px;
+    box-shadow:
+        inset 0 1px 3px rgba(255, 180, 100, 0.1),
+        0 3px 10px rgba(0, 0, 0, 0.4);
+    /* Wood grain */
+    background-image: repeating-linear-gradient(87deg,
+            transparent, transparent 7px,
+            rgba(0, 0, 0, 0.04) 7px, rgba(0, 0, 0, 0.04) 8px);
+}
+
+/* Turned feet */
+.gram-foot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50% 40% 40%;
+    background: radial-gradient(circle at 40% 30%, #6B3A1F 0%, #3B1C0B 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    top: 72px;
+}
+
+.gram-foot-fl {
+    left: 6px;
+}
+
+.gram-foot-fr {
+    right: 6px;
+}
+
+/* ======================
+   VINYL RECORD
+   ====================== */
+.gram-record {
+    position: absolute;
+    bottom: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.3),
+        0 0 0 2px #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.gram-vinyl {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1a1a1a 0%, #111 40%, #0d0d0d 100%);
+    position: relative;
+    animation: vinyl-spin 3.5s linear infinite;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Groove rings */
+.gram-groove {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(180, 180, 200, 0.07);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.gram-g1 {
+    width: 96px;
+    height: 96px;
+    border-color: rgba(180, 180, 200, 0.05);
+}
+
+.gram-g2 {
+    width: 84px;
+    height: 84px;
+    border-color: rgba(180, 180, 200, 0.08);
+}
+
+.gram-g3 {
+    width: 72px;
+    height: 72px;
+    border-color: rgba(180, 180, 200, 0.06);
+}
+
+.gram-g4 {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(180, 180, 200, 0.07);
+}
+
+.gram-g5 {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(180, 180, 200, 0.05);
+}
+
+.gram-g6 {
+    width: 38px;
+    height: 38px;
+    border-color: rgba(180, 180, 200, 0.06);
+}
+
+/* Center label disc */
+.gram-vinyl-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%,
+            #c9a84c 0%, #a07c28 40%, #7a5c18 100%);
+    box-shadow:
+        inset 0 1px 3px rgba(255, 220, 140, 0.4),
+        0 0 4px rgba(160, 124, 40, 0.25);
+}
+
+/* Spindle hole */
+.gram-vinyl-hole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+/* Iridescent shine */
+.gram-vinyl-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(130deg,
+            transparent 25%,
+            rgba(120, 150, 255, 0.07) 38%,
+            rgba(200, 120, 255, 0.05) 48%,
+            transparent 58%);
+    animation: vinyl-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* ======================
+   CURVED TONEARM / TUBE
+   ====================== */
+.gram-tube {
+    position: absolute;
+    bottom: 92px;
+    right: 20px;
+    z-index: 4;
+}
+
+/* Vertical piece rising from cabinet */
+.gram-tube-vertical {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 38px;
+    background: linear-gradient(90deg, #1a1a1a 0%, #333 40%, #1a1a1a 100%);
+    border-radius: 4px;
+    box-shadow:
+        1px 1px 4px rgba(0, 0, 0, 0.4),
+        inset 1px 0 2px rgba(255, 255, 255, 0.08);
+}
+
+/* Curved piece going toward the horn */
+.gram-tube-curve {
+    position: absolute;
+    bottom: 28px;
+    right: -6px;
+    width: 40px;
+    height: 24px;
+    border: 6px solid transparent;
+    border-top: 6px solid #c9a24a;
+    border-radius: 50% 50% 0 0;
+    background: none;
+    box-sizing: border-box;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* ======================
+   GOLDEN KNOB
+   ====================== */
+.gram-knob {
+    position: absolute;
+    bottom: 126px;
+    right: 19px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%,
+            #f0d48a 0%, #d4a853 40%, #b8860b 70%, #8B6914 100%);
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 3px rgba(255, 220, 130, 0.5),
+        0 0 8px rgba(212, 168, 83, 0.2);
+    z-index: 5;
+}
+
+/* ======================
+   LARGE GOLDEN HORN BELL
+   ====================== */
+.gram-horn {
+    position: absolute;
+    bottom: 128px;
+    left: -18px;
+    width: 120px;
+    height: 100px;
+    border-radius: 50% 60% 8px 8px;
+    background: radial-gradient(ellipse at 45% 35%,
+            #f5e0a0 0%,
+            #dbb856 15%,
+            #c9a24a 30%,
+            #b8920e 50%,
+            #a07c28 70%,
+            #8B6914 85%,
+            #6B4F12 100%);
+    box-shadow:
+        inset 0 -15px 30px rgba(0, 0, 0, 0.3),
+        inset 0 8px 20px rgba(255, 230, 150, 0.3),
+        inset -5px 0 15px rgba(0, 0, 0, 0.15),
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(212, 168, 83, 0.15);
+    z-index: 3;
+    transform: rotate(-12deg) skewY(2deg);
+    animation: horn-pulse 5s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* Fluted ridges on the horn bell */
+.gram-horn-flute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,
+            rgba(255, 240, 180, 0.2) 0%,
+            rgba(255, 240, 180, 0.05) 40%,
+            rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 50% 50% 4px 4px;
+    pointer-events: none;
+}
+
+.gram-flute-1 {
+    left: 12%;
+    width: 14%;
+}
+
+.gram-flute-2 {
+    left: 28%;
+    width: 12%;
+    opacity: 0.7;
+}
+
+.gram-flute-3 {
+    left: 42%;
+    width: 16%;
+}
+
+.gram-flute-4 {
+    left: 60%;
+    width: 12%;
+    opacity: 0.7;
+}
+
+.gram-flute-5 {
+    left: 74%;
+    width: 14%;
+}
+
+/* Highlight / specular shine */
+.gram-horn-highlight {
+    position: absolute;
+    top: 8px;
+    left: 15%;
+    width: 40%;
+    height: 50%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+            rgba(255, 245, 200, 0.35) 0%,
+            rgba(255, 245, 200, 0.1) 50%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+/* ======================
+   CRANK HANDLE
+   ====================== */
+.gram-crank {
+    position: absolute;
+    bottom: 24px;
+    right: -8px;
+    z-index: 4;
+}
+
+.gram-crank-arm {
+    width: 3px;
+    height: 22px;
+    background: linear-gradient(90deg, #555 0%, #888 50%, #555 100%);
+    border-radius: 1px;
+    margin-left: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gram-crank-handle {
+    width: 12px;
+    height: 5px;
+    background: linear-gradient(180deg, #222 0%, #444 50%, #222 100%);
+    border-radius: 2px;
+    margin-top: -1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================
+   GROUND SHADOW
+   ====================== */
+.gram-shadow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+.group:hover .gram-shadow {
+    width: 180px;
+    height: 16px;
+    opacity: 0.65;
+}
+
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.dash-item {
+    /* Base styles from .ui-card */
+    border-radius: 4px;
+}
+
+.dash-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.dash-item p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* --- Gallery Page Styles --- */
+.gallery-page {
+    background: #fdfdfd;
+    /* Clean white/off-white wall */
+    color: #111;
+    min-height: 100vh;
+}
+
+.gallery-header {
+    text-align: center;
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.gallery-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -1px;
+}
+
+.gallery-tagline {
+    font-size: 1.1rem;
+    color: #666;
+    font-family: var(--font-mono);
+    margin-bottom: var(--spacing-md);
+}
+
+.back-link {
+    font-size: 0.9rem;
+    color: #888 !important;
+    text-decoration: underline;
+    transition: color 0.3s;
+    /* Basic link behavior, can be upgraded to .ui-button in HTML later */
+}
+
+.back-link:hover {
+    color: #111 !important;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg) var(--spacing-xl);
+}
+
+.gallery-wall-wrapper {
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+    margin: 0 auto var(--spacing-xl);
+    border: 1px solid #eee;
+    max-width: 900px;
+}
+
+.gallery-wall {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 35px);
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.frame {
+    background: #fff;
+    border: 4px solid #111;
+    box-shadow: 8px 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.frame:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 15px 25px 60px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Specific Grid Areas for the Art Gallery Layout (Matches art gallery.jpg) */
+#gallery-wall div[style*="grid-area: a1;"] {
+    grid-area: 3 / 1 / 6 / 3;
+}
+
+#gallery-wall div[style*="grid-area: a2;"] {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+#gallery-wall div[style*="grid-area: a3;"] {
+    grid-area: 3 / 3 / 5 / 5;
+}
+
+/* centerpiece - avoid overlap at row 6/7, col 7 */
+#gallery-wall div[style*="grid-area: a4;"] {
+    grid-area: 1 / 5 / 7 / 8;
+}
+
+#gallery-wall div[style*="grid-area: a5;"] {
+    grid-area: 2 / 8 / 4 / 10;
+}
+
+#gallery-wall div[style*="grid-area: a6;"] {
+    grid-area: 4 / 8 / 6 / 9;
+}
+
+#gallery-wall div[style*="grid-area: a7;"] {
+    grid-area: 4 / 9 / 6 / 11;
+}
+
+#gallery-wall div[style*="grid-area: a8;"] {
+    grid-area: 6 / 1 / 8 / 4;
+}
+
+#gallery-wall div[style*="grid-area: a9;"] {
+    grid-area: 7 / 4 / 10 / 7;
+}
+
+/* shift a10 to avoid a4 (col 7) */
+#gallery-wall div[style*="grid-area: a10;"] {
+    grid-area: 7 / 7 / 10 / 9;
+}
+
+#gallery-wall div[style*="grid-area: a11;"] {
+    grid-area: 6 / 9 / 8 / 11;
+}
+
+#gallery-wall div[style*="grid-area: a12;"] {
+    grid-area: 10 / 5 / 12 / 10;
+}
+
+.frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .gallery-wall {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .gallery-wall-wrapper {
+        padding: 20px;
+    }
+
+    .frame {
+        grid-area: auto !important;
+        height: 250px;
+    }
+}
+
+/* --- Interactive Library --- */
+.library-page {
+    background-color: #1a1510;
+    /* Dark wood ambiance */
+    color: #e0e0e0;
+}
+
+.shelf-header {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.library-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px var(--spacing-lg);
+    /* Adjusted for better baseline */
+    perspective: 1000px;
+}
+
+.shelf {
+    height: 220px;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Center the overlapping books */
+    padding: 0;
+    /* Remove padding to avoid offset */
+    align-items: flex-end;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.shelf::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: #3e2723;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    z-index: 0;
+}
+
+/* 3D Book Styles - Clean & Physical */
+.book {
+    width: 140px;
+    height: 200px;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin 0.5s ease, z-index 0s;
+    cursor: pointer;
+    margin: 0 -70px 12px 0;
+    /* -70px overlap (half of 140px width) */
+    z-index: 1;
+}
+
+.book:last-child,
+.book.no-overlap {
+    margin-right: 0;
+    /* Flush alignment for last book or items preceding objects */
+}
+
+.book:hover {
+    transform: translateY(-10px) scale(1.05);
+    /* Simple pop-up */
+    z-index: 100;
+}
+
+.book:hover .cover {
+    transform: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Pages / Thickness Effect */
+/* 3D Pages / Thickness Effect Removed */
+.book::before {
+    display: none;
+}
+
+.book::after {
+    display: none;
+}
+
+/* --- THE COMPENDIUM Section --- */
+.compendium-section {
+    background-color: transparent;
+}
+
+.compendium-title {
+    color: var(--text-color);
+}
+
+.version-log {
+    letter-spacing: 0.1em;
+}
+
+.resource-card {
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Base styles from .ui-card */
+}
+
+body.home .resource-card {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 0 15px rgba(0, 102, 204, 0.1);
+}
+
+.category-tag {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color);
+    background: rgba(0, 102, 204, 0.05);
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    letter-spacing: 0.05em;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.resource-title {
+    font-family: var(--font-mono);
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+.resource-description {
+    line-height: 1.5;
+    color: #666;
+}
+
+.source-link {
+    /* Inherits from .ui-button base class */
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Ensure the compendium grid is responsive */
+@media (max-width: 768px) {
+    .compendium-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Spine (Hidden per user request for minimal look) */
+.spine {
+    display: none;
+}
+
+/* Cover (Now the primary visual element on the shelf) */
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    /* Adjusted for better shelf proportion */
+    height: 100%;
+    background: #222;
+    transform-origin: center;
+    transform: none;
+    /* Flat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Edge highlight */
+    overflow: hidden;
+    border-radius: 8px;
+    /* Elegant curved edges */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9);
+}
+
+/* Clean CSS-Based Cover */
+.clean-cover {
+    background: #0f0a1a !important;
+    /* Deep Midnight */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+    text-align: center;
+    border-left: 5px solid rgba(255, 255, 255, 0.05);
+}
+
+.clean-cover-inner {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.clean-cover-inner p {
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin: 0;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.clean-cover-inner h3 {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    margin: 8px 0;
+    color: #f0eaf8;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.cover-divider {
+    width: 20px;
+    height: 1px;
+    background: var(--accent-color);
+    margin: 10px 0;
+    opacity: 0.5;
+}
+
+.crown-icon {
+    font-size: 14px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.author-label {
+    font-weight: bold;
+    color: var(--accent-color) !important;
+}
+
+.book.featured .clean-cover-inner p {
+    font-size: 10px;
+}
+
+.book.featured .clean-cover-inner h3 {
+    font-size: 18px;
+}
+
+.book.featured .crown-icon {
+    font-size: 20px;
+}
+
+/* Page Block (Hidden for cleaner aesthetic) */
+.book-inner::before {
+    display: none;
+}
+
+/* Home Page Link to Bookshelf */
+.interactive-item {
+    cursor: pointer;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.interactive-item:hover {
+    border-color: var(--accent-color);
+    background: rgba(var(--accent-color-rgb), 0.1);
+}
+
+.full-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Library Frame */
+.library-frame {
+    background: rgba(42, 27, 20, 0.6);
+    /* Semi-transparent dark wood */
+    padding: 40px;
+    border: 20px solid #3e2723;
+    border-radius: 12px;
+    box-shadow:
+        inset 0 0 100px rgba(0, 0, 0, 0.9),
+        0 40px 80px rgba(0, 0, 0, 0.7);
+    position: relative;
+    max-width: 1600px;
+    margin: 150px auto 100px;
+    overflow-x: hidden;
+}
+
+/* Wood texture effect for frame */
+.library-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+/* Featured Book Section */
+.featured-book-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 20px;
+    margin-bottom: 150px;
+    /* Added margin to push content down */
+    position: relative;
+    z-index: 10;
+}
+
+.featured-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+
+
+.full-link:hover {
+    color: inherit;
+}
+
+/* Decorative Bookshelf Objects */
+.shelf-object {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-30px);
+    /* Pushed deeper than books */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 0 12px 0;
+    /* Base alignment on shelf board */
+}
+
+.shelf-object:hover {
+    transform: translateZ(30px) scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════════════
+   ATHENA STATUE — Photorealistic Carved Marble
+   ═══════════════════════════════════════════════════════ */
+.athena-statue {
+    width: 55px;
+    height: 130px;
+    background:
+        /* Top-left light catch */
+        radial-gradient(ellipse at 25% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+        /* Marble veins - diagonal */
+        repeating-linear-gradient(-30deg,
+            transparent 0px,
+            transparent 8px,
+            rgba(160, 155, 150, 0.08) 8px,
+            rgba(160, 155, 150, 0.08) 9px),
+        /* Marble veins - cross */
+        repeating-linear-gradient(60deg,
+            transparent 0px,
+            transparent 12px,
+            rgba(140, 135, 130, 0.06) 12px,
+            rgba(140, 135, 130, 0.06) 13px),
+        /* Core marble body */
+        linear-gradient(170deg,
+            #fafafa 0%,
+            #f0ece8 15%,
+            #e8e4e0 30%,
+            #ddd8d4 50%,
+            #e0dcd8 70%,
+            #ebe7e3 85%,
+            #f5f2ef 100%);
+    border-radius: 30% 30% 8px 8px / 45% 45% 8px 8px;
+    box-shadow:
+        /* Ambient occlusion at base */
+        0 2px 8px rgba(0, 0, 0, 0.5),
+        /* Drop shadow */
+        4px 12px 25px rgba(0, 0, 0, 0.35),
+        /* Far shadow */
+        8px 20px 40px rgba(0, 0, 0, 0.15),
+        /* Inner light from top-left */
+        inset 8px 8px 20px rgba(255, 255, 255, 0.7),
+        /* Inner shadow from bottom-right */
+        inset -6px -10px 20px rgba(0, 0, 0, 0.12);
+    /* margin handled by .shelf-object */
+    /* Human figure silhouette: head → neck → shoulders → torso → draped robe → pedestal */
+    clip-path: polygon(38% 0%, 62% 0%,
+            68% 5%, 70% 12%, 65% 18%,
+            72% 22%, 88% 28%, 90% 32%,
+            85% 36%, 72% 38%,
+            78% 55%, 82% 70%,
+            88% 85%, 90% 95%, 92% 100%,
+            8% 100%, 10% 95%, 12% 85%,
+            18% 70%, 22% 55%,
+            28% 38%, 15% 36%,
+            10% 32%, 12% 28%, 28% 22%,
+            35% 18%, 30% 12%, 32% 5%);
+    overflow: visible;
+}
+
+/* Top-down ambient light highlight */
+.athena-statue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 50%;
+    background:
+        radial-gradient(ellipse at 35% 20%, rgba(255, 255, 255, 0.85) 0%, transparent 55%),
+        radial-gradient(ellipse at 60% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 40%);
+    border-radius: 50%;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+/* Pedestal label */
+.athena-statue::after {
+    content: 'ATHENA';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: rgba(200, 190, 180, 0.7);
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════
+   FLOWERPOT — Weathered Terra Cotta with Lush Succulent
+   ═══════════════════════════════════════════════════════ */
+.flowerpot {
+    width: 72px;
+    height: 68px;
+    background:
+        /* Rim highlight */
+        linear-gradient(to bottom, rgba(255, 200, 160, 0.5) 0%, transparent 12%),
+        /* Weathered texture */
+        radial-gradient(circle at 30% 60%, rgba(0, 0, 0, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 70% 40%, rgba(255, 200, 160, 0.15) 0%, transparent 30%),
+        /* Core clay gradient */
+        linear-gradient(to bottom,
+            #c75b39 0%,
+            #d84315 8%,
+            #bf360c 40%,
+            #a52800 70%,
+            #8d2000 100%);
+    clip-path: polygon(5% 0%, 95% 0%,
+            93% 5%, 90% 8%,
+            85% 10%, 82% 100%,
+            18% 100%, 15% 10%,
+            10% 8%, 7% 5%);
+    /* margin handled by .shelf-object */
+    box-shadow:
+        inset 4px 0 10px rgba(255, 200, 160, 0.2),
+        inset -6px 0 12px rgba(0, 0, 0, 0.25),
+        inset 0 8px 15px rgba(0, 0, 0, 0.4),
+        4px 10px 20px rgba(0, 0, 0, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Lush multi-leaf plant */
+.flowerpot::before {
+    content: '';
+    position: absolute;
+    top: -58px;
+    left: -5%;
+    width: 110%;
+    height: 65px;
+    background:
+        /* Central tall leaf */
+        radial-gradient(ellipse at 50% 95%, #2e7d32 0%, #1b5e20 25%, transparent 55%),
+        /* Left drooping leaf */
+        radial-gradient(ellipse at 25% 70%, #43a047 0%, #2e7d32 20%, transparent 50%),
+        /* Right leaf */
+        radial-gradient(ellipse at 75% 65%, #66bb6a 0%, #43a047 20%, transparent 45%),
+        /* Far left accent */
+        radial-gradient(ellipse at 10% 80%, #388e3c 0%, transparent 40%),
+        /* Far right accent */
+        radial-gradient(ellipse at 90% 75%, #4caf50 0%, transparent 35%),
+        /* Top leaf tip */
+        radial-gradient(ellipse at 45% 30%, #81c784 0%, transparent 35%);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+    z-index: 2;
+}
+
+/* Rich dark soil with texture */
+.flowerpot::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 16%;
+    width: 68%;
+    height: 14px;
+    background:
+        radial-gradient(circle at 25% 50%, rgba(80, 50, 30, 0.8) 0%, transparent 40%),
+        radial-gradient(circle at 70% 40%, rgba(60, 35, 20, 0.6) 0%, transparent 35%),
+        radial-gradient(circle, #3e2723 0%, #1a0e0a 100%);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.9),
+        inset 0 -1px 3px rgba(100, 70, 50, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════
+   VASE — Blown Glass with Water
+   ═══════════════════════════════════════════════════════ */
+.vase {
+    width: 50px;
+    height: 105px;
+    background:
+        /* Caustic light pattern */
+        radial-gradient(ellipse at 30% 25%, rgba(255, 255, 255, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse at 65% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+        /* Glass body tint */
+        linear-gradient(135deg,
+            rgba(0, 150, 136, 0.08) 0%,
+            rgba(0, 188, 212, 0.12) 30%,
+            rgba(0, 150, 136, 0.06) 60%,
+            rgba(0, 188, 212, 0.1) 100%);
+    border-radius: 35% 35% 42% 42% / 18% 18% 12% 12%;
+    /* margin handled by .shelf-object */
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        /* Thick glass inner glow */
+        inset 0 0 20px rgba(255, 255, 255, 0.35),
+        inset 8px 0 15px rgba(255, 255, 255, 0.15),
+        inset -4px -8px 20px rgba(0, 0, 0, 0.08),
+        /* Outer shadow */
+        3px 10px 20px rgba(0, 0, 0, 0.3),
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        /* Subtle caustic on surface */
+        0 0 40px rgba(0, 188, 212, 0.05);
+    overflow: hidden;
+}
+
+/* Sharp specular highlight streak */
+.vase::before {
+    content: '';
+    position: absolute;
+    top: 8%;
+    left: 18%;
+    width: 12%;
+    height: 55%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.5) 30%,
+            rgba(255, 255, 255, 0.1) 60%,
+            transparent 100%);
+    border-radius: 50%;
+    transform: rotate(-5deg);
+    filter: blur(1px);
+}
+
+/* Water level with meniscus */
+.vase::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background:
+        /* Meniscus curve at waterline */
+        linear-gradient(to bottom, transparent 0%, rgba(0, 188, 212, 0.05) 5%, rgba(0, 188, 212, 0.15) 20%, rgba(0, 150, 136, 0.25) 100%);
+    border-radius: 0 0 42% 42% / 0 0 30% 30%;
+    box-shadow:
+        inset 0 2px 8px rgba(0, 188, 212, 0.2),
+        inset 0 -5px 15px rgba(0, 150, 136, 0.1);
+}
+
+
+/* ========== Music Page ========== */
+body.music-page {
+    --bg-color: #fcf9f2;
+    --text-color: #1a1a1a;
+    --secondary-bg: rgba(0, 0, 0, 0.03);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --accent-color: #a855f7;
+    --accent-glow: rgba(168, 85, 247, 0.1);
+    background: linear-gradient(180deg, #fcf9f2 0%, #f7f1e6 40%, #f2ebd9 100%);
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Ambient background glow - Subtle for light theme */
+body.music-page::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.03) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    animation: ambientDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes ambientDrift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-30px, -20px) rotate(3deg);
+    }
+}
+
+.music-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.music-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.music-header h1 {
+    font-family: var(--font-mono);
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing-sm);
+    color: #1a1a1a;
+    text-shadow: none;
+}
+
+@keyframes titleGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+    }
+}
+
+.music-tagline {
+    font-size: 1rem;
+    color: rgba(168, 85, 247, 0.6);
+    font-family: var(--font-mono);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* CD Jewel Case Styles */
+.cd-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Base styles from .ui-card */
+}
+
+.cd-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.cd-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #050505;
+    /* Solid dark tray background */
+    border-radius: 4px;
+    box-shadow: none;
+    transition: box-shadow 0.4s ease;
+    overflow: hidden;
+    /* Reverted to hidden to contain the disc */
+    margin-bottom: 1.5rem;
+    aspect-ratio: 1 / 1;
+}
+
+.cd-jewel-case {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/music/cd.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    /* Keep highlights, show inlay/disc underneath */
+    opacity: 0.9;
+}
+
+.cd-disc {
+    position: absolute;
+    inset: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    opacity: 0.95;
+    /* Static centered position for "cover blend" look */
+}
+
+/* Show shadow for CD on card hover */
+.cd-card:hover .cd-visual {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Removed pop-out hover for CD cards per user request */
+
+.cd-disc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.2);
+}
+
+.cd-center-hole {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Fix grid for Top 4 to accommodate slightly larger CD cards if needed */
+.top-4-grid,
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+    /* Reduced to make space for tagline */
+}
+
+.cd-tagline {
+    text-align: center;
+    font-family: 'Pinyon Script', cursive !important;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    opacity: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Refinement */
+.music-header {
+    text-align: center;
+    margin-top: 8rem;
+    /* Space from previous section */
+    margin-bottom: 4rem;
+}
+
+body.theme-music .music-header h1 {
+    font-weight: 900 !important;
+    /* Bolder */
+    text-shadow: 1px 0 0 currentColor;
+    /* Extra boldness */
+    letter-spacing: 6px;
+    /* Slightly wider */
+}
+
+/* Album Grid */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 4.5rem;
+    /* Reverted to responsive layout */
+}
+
+@media (max-width: 600px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .music-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Album Card */
+.card {
+    background: transparent;
+    overflow: visible;
+    cursor: default;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    /* Inherits base transition from .ui-card */
+}
+
+.card:hover {
+    transform: translateY(-16px) scale(1.08);
+    /* Increased pop */
+    box-shadow: none;
+    z-index: 20;
+    /* Ensure it's above everything */
+}
+
+/* Album Visual Container */
+.card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 0px;
+    overflow: visible !important;
+    /* Crucial for vinyl peek */
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.album-main-visual {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: visible;
+}
+
+.music-card-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    /* Over the vinyl */
+    box-shadow: none;
+    transition: box-shadow 0.4s ease;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.music-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Show shadow for Album on card hover */
+.album-card:hover .music-card-image {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Base Vinyl Styling - Half-peek always */
+.vinyl-record {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    background: radial-gradient(circle,
+            transparent 0%,
+            transparent 4%,
+            var(--accent-color) 4%,
+            var(--accent-color) 18%,
+            #111 18.5%,
+            #111 35%,
+            #000 50%,
+            #111 70%,
+            #000 85%,
+            #111 100%);
+    border-radius: 50%;
+    right: -40%;
+    z-index: 1;
+    /* Was -1, moved to positive to ensure visibility */
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+        right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: ambientRotate 20s linear infinite;
+}
+
+/* Ensure card hover triggers vinyl behavior */
+.card:hover .vinyl-record {
+    right: -55%;
+    /* Pop out further on hover */
+    transform: rotate(360deg) scale(1.02);
+}
+
+@keyframes ambientRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Vinyl Grooves & Texture */
+.vinyl-record::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle at center,
+            transparent 0,
+            transparent 1px,
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 3px);
+    pointer-events: none;
+}
+
+/* Vinyl Shine Effect */
+.vinyl-record::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            rgba(255, 255, 255, 0.08) 45deg,
+            transparent 90deg,
+            transparent 180deg,
+            rgba(255, 255, 255, 0.08) 225deg,
+            transparent 270deg,
+            transparent 360deg);
+    pointer-events: none;
+}
+
+/* Shared hover rule for music card images */
+.card:hover .music-card-image img {
+    transform: scale(1.15);
+    /* Slightly more zoom */
+    filter: brightness(100%) !important;
+    /* Force no dimming */
+    opacity: 1 !important;
+}
+
+/* Overlay */
+.album-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    /* Removed tint as per user request */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.album-card:hover .album-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #000;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+    transform: scale(0.6);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.album-card:hover .play-icon {
+    transform: scale(1);
+}
+
+/* Album Info */
+.album-info {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    z-index: 5;
+    position: relative;
+}
+
+.album-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.album-artist {
+    font-size: 0.75rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.album-year {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45) !important;
+    letter-spacing: 1px;
+}
+
+/* Card Content Fixes (Removing borders/backgrounds) */
+.card-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 1rem 0;
+}
+
+.card-title,
+.card-subtitle {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Playlist Section */
+.playlist-section {
+    margin-top: 4rem;
+    padding: 3rem var(--spacing-lg);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(99, 102, 241, 0.03) 100%);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.playlist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.playlist-cover-link {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+}
+
+.playlist-cover-link:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.playlist-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.playlist-cover-link:hover .playlist-cover-img {
+    transform: scale(1.1);
+    filter: brightness(0.5) saturate(1.3);
+}
+
+.playlist-cover-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 12px;
+}
+
+.playlist-cover-link:hover .playlist-cover-overlay {
+    opacity: 1;
+}
+
+.playlist-item h2 {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    /* Reduced to match album titles */
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.playlist-item p {
+    color: rgba(168, 85, 247, 0.6);
+    font-size: 0.85rem;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 250px;
+}
+
+
+/* Note Overlay (Music Page Only) */
+.note-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.note-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.album-card:hover .play-icon {
+    transform: scale(1);
+}
+
+/* Album Info */
+.album-info {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    z-index: 5;
+    position: relative;
+}
+
+.album-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.album-artist {
+    font-size: 0.75rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.album-year {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45) !important;
+    letter-spacing: 1px;
+}
+
+/* Card Content Fixes (Removing borders/backgrounds) */
+.card-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 1rem 0;
+}
+
+.card-title,
+.card-subtitle {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Playlist Section */
+.playlist-section {
+    margin-top: 4rem;
+    padding: 3rem var(--spacing-lg);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(99, 102, 241, 0.03) 100%);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.playlist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.playlist-cover-link {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+}
+
+.playlist-cover-link:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.playlist-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.playlist-cover-link:hover .playlist-cover-img {
+    transform: scale(1.1);
+    filter: brightness(0.5) saturate(1.3);
+}
+
+.playlist-cover-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 12px;
+}
+
+.playlist-cover-link:hover .playlist-cover-overlay {
+    opacity: 1;
+}
+
+.playlist-item h2 {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    /* Reduced to match album titles */
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.playlist-item p {
+    color: rgba(168, 85, 247, 0.6);
+    font-size: 0.85rem;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 250px;
+}
+
+
+/* Note Overlay (Music Page Only) */
+.note-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.note-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.note-content {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(217, 190, 76, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    max-width: 380px;
+    width: 90%;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(217, 190, 76, 0.05);
+}
+
+.note-overlay.active .note-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-note {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: rgba(217, 190, 76, 0.5);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-note:hover {
+    color: var(--accent-color);
+}
+
+.cd-card {
+    text-align: center;
+}
+
+.cd-card .album-info {
+    padding: 1rem 0.5rem;
+    align-items: center;
+}
+
+.cd-card .album-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.cd-card .album-artist {
+    font-size: 0.7rem;
+    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.note-text-container {
+    text-align: center;
+}
+
+#note-album-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* Note Album Cover */
+.note-album-cover {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    transform: translateY(-20px);
+    transition: transform 0.4s ease;
+}
+
+#note-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#note-album-artist {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.note-divider {
+    height: 1px;
+    width: 60px;
+    background: var(--accent-color);
+    margin: 0 auto 2rem;
+    opacity: 0.3;
+}
+
+#note-text {
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    margin-bottom: 1rem;
+    height: 7.5em;
+    /* Exactly 5 lines at 1.5 line-height */
+    overflow-y: auto;
+    padding-right: 10px;
+    /* Space for scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) rgba(255, 255, 255, 0.1);
+}
+
+/* Webkit Scrollbar Styling for Note Text */
+#note-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+#note-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+#note-text::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.fav-song-display {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(217, 190, 76, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fav-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(217, 190, 76, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#note-fav-song {
+    font-family: var(--font-main);
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(217, 190, 76, 0.3);
+}
+
+.music-nav {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.music-nav a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.3s, text-shadow 0.3s;
+    letter-spacing: 1px;
+}
+
+.music-nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* ========== Cinema Page ========== */
+body.cinema-page {
+    --bg-color: #ffffff;
+    --text-color: #f5f0e8;
+    --secondary-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.06);
+    --accent-color: #d4a853;
+    --accent-glow: rgba(212, 168, 83, 0.3);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%), #ffffff;
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Film grain texture */
+body.cinema-page::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 40% 30%, rgba(212, 168, 83, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 60% 70%, rgba(180, 120, 60, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: ambientDrift 25s ease-in-out infinite alternate;
+}
+
+.cinema-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.cinema-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.cinema-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    letter-spacing: 0.25em;
+    margin-bottom: var(--spacing-sm);
+    color: #ffffff;
+    background: linear-gradient(to bottom, #fff, #bdbdbd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+/* --- Project Section Styles --- */
+.projects {
+    padding: var(--spacing-xl) 0;
+}
+
+.projects h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #f5f0e8;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+}
+
+.project-link:hover .project-card {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 168, 83, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.project-card p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.cinema-tagline {
+    font-size: 1.4rem;
+    color: #000000;
+    font-family: 'Pinyon Script', cursive;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Film Grid — Flexible grid for varying content */
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 800px) {
+    .film-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .film-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .cinema-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Film Card */
+.film-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.film-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(212, 168, 83, 0.08);
+    border-color: rgba(212, 168, 83, 0.15);
+}
+
+/* Film Poster */
+.film-poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.film-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(0.4) saturate(1.2);
+}
+
+/* Film Overlay */
+.film-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.film-card:hover .film-overlay {
+    opacity: 1;
+}
+
+
+/* Film Info */
+.film-info {
+    padding: 14px 14px 18px;
+}
+
+.film-title {
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 6px;
+    color: #ffffff;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.film-director {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: #000000;
+    margin: 0 0 8px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.film-year {
+    font-family: var(--font-modern);
+    font-size: 0.7rem;
+    color: rgba(252, 252, 252, 0.3);
+    letter-spacing: 0.2em;
+    font-weight: 700;
+}
+
+.letterboxd-section {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cta-text {
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.letterboxd-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 168, 83, 0.2);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+.letterboxd-link:hover {
+    transform: scale(1.15) translateY(-5px);
+    background: rgba(212, 168, 83, 0.1);
+    border-color: rgba(212, 168, 83, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 168, 83, 0.1);
+}
+
+/* Cinema Nav Removed */
+
+/* TV Section */
+.music-header {
+    text-align: left;
+    margin-bottom: 4rem;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.tv-section {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+    position: relative;
+}
+
+.tv-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.section-heading {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin: 0 0 var(--spacing-sm);
+    background: linear-gradient(to bottom, #fff, #bdbdbd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+
+/* --- Dashboard 3D Phonograph (Realistic Refinement) --- */
+.phonograph-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.phonograph-base {
+    width: 100px;
+    height: 45px;
+    background: linear-gradient(to bottom, #3d2b1f, #2a1b14);
+    /* Mahogany Wood */
+    position: absolute;
+    bottom: 15px;
+    border-radius: 4px;
+    box-shadow:
+        inset 0 2px 5px rgba(255, 255, 255, 0.1),
+        0 12px 25px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Wood Grain Detail */
+.phonograph-base::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 3px);
+    opacity: 0.3;
+}
+
+.phonograph-record {
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle,
+            #222 0%, #222 5%,
+            #d4af37 6%, #d4af37 8%,
+            #111 9%, #111 12%,
+            #1a1a1a 13%, #000 100%);
+    background-image: radial-gradient(circle,
+            transparent 39%,
+            rgba(255, 255, 255, 0.05) 40%,
+            transparent 41%);
+    background-size: 100% 100%, 4px 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: rotateX(65deg);
+    border: 2px solid #080808;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+    animation: recordSpin 6s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grooves effect */
+.phonograph-record::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, #1a1a1a, #1a1a1a 1px, #000 2px);
+    opacity: 0.4;
+}
+
+.phonograph-horn {
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(135deg, #FFD700 0%, #d4af37 40%, #8B4513 100%);
+    position: absolute;
+    top: -35px;
+    left: 0px;
+    clip-path: polygon(15% 100%, 85% 100%, 100% 0%, 0% 0%);
+    transform: rotate(-20deg);
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    z-index: 5;
+}
+
+/* Horn Flare / Opening Rim */
+.phonograph-horn::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -15%;
+    width: 130%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.8) 0%, #d4af37 70%, #8B4513 100%);
+    border-radius: 50%;
+    border-top: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.phonograph-arm {
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(to bottom, #aaa, #666);
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    transform: rotate(-25deg);
+    transform-origin: right;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Tone Arm Pivot */
+.phonograph-arm::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 30% 30%, #eee, #444);
+    border-radius: 50%;
+    border: 1px solid #222;
+}
+
+/* The Needle Cartridge */
+.phonograph-arm::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 10px;
+    height: 6px;
+    background: #111;
+    transform: rotate(10deg);
+}
+
+@keyframes recordSpin {
+    from {
+        transform: rotateX(65deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+.group:hover .phonograph-container {
+    transform: translateY(-15px) rotateY(-10deg) scale(1.15);
+}
+
+.group:hover .phonograph-horn {
+    filter: drop-shadow(0 5px 25px rgba(212, 175, 55, 0.5));
+}
+
+/* --- Dashboard 3D Clapperboard --- */
+.clapper-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    perspective: 1500px;
+    padding-bottom: 30px;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.clapper-top {
+    width: 140px;
+    height: 25px;
+    background: #111;
+    position: absolute;
+    bottom: 115px;
+    transform-origin: left bottom;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    border: 1px solid #000;
+    z-index: 10;
+}
+
+/* Stripes for Top */
+.clapper-top::before,
+.clapper-slate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg,
+            #111,
+            #111 20px,
+            #eee 20px,
+            #eee 40px);
+    opacity: 0.9;
+}
+
+.clapper-slate {
+    width: 140px;
+    height: 100px;
+    background: #1a1a1a;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 6px;
+}
+
+/* Slate stripes top bar */
+.clapper-slate::before {
+    content: '';
+    position: absolute;
+    height: 25px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Chalk Text effect */
+.slate-info {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.slate-info span {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 3px;
+    text-align: center;
+}
+
+.slate-main-text {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-top: 8px;
+    opacity: 0.6;
+}
+
+/* Hinged Motion */
+.group:hover .clapper-top {
+    transform: rotate(-35deg);
+}
+
+.group:hover .clapper-container {
+    transform: translateY(-15px) rotateY(15deg) scale(1.15);
+}
+
+.group:hover .clapper-slate {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   Projects Portal - Home Page Component (Full-Width Breakout)
+   ========================================================================== */
+
+.projects-portal-container {
+    position: relative;
+    overflow: hidden;
+    margin: 4rem auto;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(212, 168, 83, 0.1);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+}
+
+.projects-portal-frame {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- Decorative Background Layers ---- */
+
+.projects-portal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Technical Grid - Blueprint Style */
+    background-image:
+        linear-gradient(rgba(212, 168, 83, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 168, 83, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(212, 168, 83, 0.02) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, rgba(212, 168, 83, 0.02) 0.5px, transparent 0.5px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: center center;
+}
+
+/* Central Radial Glow */
+.projects-portal-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+    /* Subtle Cyan/Blue glow for space tech */
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* Scanline sweep */
+.projects-portal-bg::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(14, 165, 233, 0.05),
+            /* Cyan scanline */
+            transparent);
+    animation: scanline 12s linear infinite;
+}
+
+@keyframes scanline {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+/* Rocket Schematic SVG Decorations */
+.projects-portal-schematic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Main Rocket Body Outline (Centered) */
+.schematic-rocket-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 85%;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 600'%3E%3C!-- Rocket Body --%3E%3Cpath d='M150 50 C150 50 100 150 100 400 L100 500 L120 550 L180 550 L200 500 L200 400 C200 150 150 50 150 50 Z' fill='none' stroke='%23d4a853' stroke-width='1.5' stroke-dasharray='10,5'/%3E%3C!-- Fins --%3E%3Cpath d='M100 450 L50 520 L100 520' fill='none' stroke='%23d4a853' stroke-width='1'/%3E%3Cpath d='M200 450 L250 520 L200 520' fill='none' stroke='%23d4a853' stroke-width='1'/%3E%3C!-- Detail Lines --%3E%3Cline x1='100' y1='200' x2='200' y2='200' stroke='%23d4a853' stroke-width='0.5'/%3E%3Cline x1='100' y1='300' x2='200' y2='300' stroke='%23d4a853' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='250' r='15' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Technical Data Panels (Left) */
+.schematic-left {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 300px;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 400'%3E%3Ctext x='10' y='30' font-family='monospace' font-size='10' fill='%23d4a853' letter-spacing='2'%3EPROPULSION SYS%3C/text%3E%3Cline x1='10' y1='40' x2='150' y2='40' stroke='%23d4a853' stroke-width='1'/%3E%3Crect x='10' y='60' width='80' height='60' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3Crect x='100' y='60' width='80' height='60' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3Ctext x='10' y='150' font-family='monospace' font-size='8' fill='%23d4a853'%3ETHRUST VECTOR: NOMINAL%3C/text%3E%3Ctext x='10' y='170' font-family='monospace' font-size='8' fill='%23d4a853'%3EFUEL FLOW: 98.4%25%3C/text%3E%3Cpath d='M10 220 L50 220 L70 200 L180 200' fill='none' stroke='%23d4a853' stroke-width='0.5' stroke-dasharray='4,2'/%3E%3Ccircle cx='180' cy='200' r='3' fill='%23d4a853'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+}
+
+/* Technical Component Detail (Right) */
+.schematic-right {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 300px;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 400'%3E%3Ctext x='50' y='30' font-family='monospace' font-size='10' fill='%23d4a853' letter-spacing='2' text-anchor='end'%3EORBITAL MODULE%3C/text%3E%3Cline x1='50' y1='40' x2='190' y2='40' stroke='%23d4a853' stroke-width='1'/%3E%3Ccircle cx='150' cy='100' r='40' fill='none' stroke='%23d4a853' stroke-width='0.5' stroke-dasharray='4,4'/%3E%3Ccircle cx='150' cy='100' r='20' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3Cline x1='150' y1='100' x2='190' y2='60' stroke='%23d4a853' stroke-width='0.5'/%3E%3Ctext x='190' y='55' font-family='monospace' font-size='8' fill='%23d4a853' text-anchor='end'%3ECORE%3C/text%3E%3Crect x='80' y='200' width='100' height='10' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3Crect x='80' y='220' width='80' height='10' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3Crect x='80' y='240' width='60' height='10' fill='none' stroke='%23d4a853' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+}
+
+/* Gear Icon (large) */
+.engine-gear-lg {
+    width: 130px;
+    height: 130px;
+    stroke-width: 0.5;
+    color: #44403c;
+    /* Darker: Stone 700 for contrast on white */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    animation: spin-slow 12s linear infinite;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .engine-gear-lg {
+    color: #c5a059;
+    /* Richer Gold for premium feel on white */
+    filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.3));
+    transform: rotate(180deg);
+}
+
+.projects-portal-frame:hover {
+    border-color: rgba(14, 165, 233, 0.5);
+    /* Cyan border on hover */
+    box-shadow: 0 60px 150px -40px rgba(14, 165, 233, 0.2);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.projects-portal-frame::before {
+    border-top: 4px solid #0ea5e9;
+    border-left: 4px solid #0ea5e9;
+}
+
+.projects-portal-frame::after {
+    border-bottom: 4px solid #0ea5e9;
+    border-right: 4px solid #0ea5e9;
+}
+
+
+/* ==========================================================================
+   Mobile Optimization Overrides
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- Global Typography & Spacing --- */
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-lg: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+        /* Scale down varied h1 sizes */
+    }
+
+    .section-heading,
+    .music-header h1,
+    .cinema-header h1 {
+        font-size: 2rem !important;
+    }
+
+    /* --- Home Page --- */
+    /* Adjust Bio Intro for mobile */
+    .bio-dashboard .bio-intro {
+        padding: 8rem 1rem 4rem 1rem;
+        margin-left: 0;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .bio-dashboard h1 {
+        font-size: 3rem;
+        /* Smaller script font */
+    }
+
+    /* Focal Trio Stacking & Scaling */
+    .focal-trio {
+        padding: 2rem 1rem;
+        gap: 3rem;
+        /* Increase gap for vertical stacking */
+    }
+
+    /* Scale down 3D items to fit width */
+    .phonograph-container,
+    .clapper-container {
+        transform: scale(0.7);
+        margin-bottom: -20px;
+        /* Reduce negative space from scaling */
+    }
+
+    /* Project Portal & Compendium */
+    .projects-portal-container {
+        padding: 4rem 1rem;
+    }
+
+    .schematic-rocket-center {
+        width: 250px;
+        /* Fit screen */
+    }
+
+    /* --- Gallery Page --- */
+    /* Force 2 columns on mobile, maybe 1 on very small */
+    .gallery-wall {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+
+    .gallery-wall-wrapper {
+        padding: 15px;
+    }
+
+    /* --- Music & Cinema Pages --- */
+    .top-4-grid,
+    .songs-grid,
+    .album-grid,
+    .film-grid,
+    .playlists-grid,
+    .project-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .cd-visual {
+        width: 140px;
+        height: 140px;
+    }
+
+    .cd-tagline {
+        font-size: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* --- Bookshelf Page --- */
+    .library-frame {
+        padding: 20px;
+        margin: 50px auto;
+        border-width: 10px;
+    }
+
+    .shelf {
+        margin-bottom: 200px;
+        /* Scale down books/shelf if they overflow */
+        zoom: 0.6;
+        /* Effective for mobile scaling */
+        width: 100%;
+    }
+
+    /* Fallback for firefox which doesn't support zoom */
+    @supports not (zoom: 1) {
+        .shelf {
+            transform: scale(0.6);
+            transform-origin: top center;
+            width: 160%;
+            /* Compensate for scale */
+            margin-left: -30%;
+        }
+    }
+
+    .book {
+        margin: 0 10px 8px;
+        /* Tighter shelving */
+    }
+
+    .shelf-object {
+        margin: 0 15px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Very Small Screens */
+    .gallery-wall {
+        grid-template-columns: 1fr !important;
+    }
+
+    .album-grid,
+    .film-grid {
+        grid-template-columns: 1fr;
+        /* 1 column for albums/films */
+    }
+
+    .bio-dashboard h1 {
+        font-size: 2.5rem;
+    }
+
+    .focal-trio {
+        gap: 4rem;
+    }
+
+    .music-header h1,
+    .cinema-header h1 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   UNIFIED CARD SYSTEM
+   Refactoring for Books, Movies, and Music
+   ========================================================================== */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 0;
+    /* Removed default padding to support specialized visuals */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.card-content {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(212, 168, 83, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(212, 168, 83, 0.1);
+}
+
+/* Card Image Section */
+.card-image {
+    width: 100%;
+    aspect-ratio: 2/3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+/* Card Content Section */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.card-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-top: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Media Specific Adjustments */
+.theme-library .card-image {
+    aspect-ratio: 2/3;
+}
+
+.theme-cinema .card-image {
+    aspect-ratio: 2/3;
+}
+
+.theme-music .card {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+.theme-music .card:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: translateY(-10px);
+}
+
+.theme-music .card-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.theme-music .card-image {
+    aspect-ratio: 1/1 !important;
+    min-height: 0;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Keep shadow on image */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,182 @@
+[
+    {
+        "title": "The Prince",
+        "cover": "download.jpg",
+        "spineColor": "#8B4513"
+    },
+    {
+        "title": "Crime and Punishment",
+        "cover": "Crime and Punishment.jpg",
+        "spineColor": "#2F4F4F"
+    },
+    {
+        "title": "The Bhagavad Gita",
+        "cover": "The bhagvat geeta.jpg",
+        "spineColor": "#4682B4"
+    },
+    {
+        "title": "The Metamorphosis",
+        "cover": "The Metamorphosis.jpg",
+        "spineColor": "#556B2F"
+    },
+    {
+        "title": "The Art of War",
+        "cover": "Art of War.jpg",
+        "spineColor": "#333333"
+    },
+    {
+        "title": "White Nights",
+        "cover": "White Nights.jpg",
+        "spineColor": "#5D4037"
+    },
+    {
+        "title": "Meditations",
+        "cover": "Meditations.jpg",
+        "spineColor": "#004D40"
+    },
+    {
+        "title": "The Trial",
+        "cover": "The Trial.jpg",
+        "spineColor": "#1A237E"
+    },
+    {
+        "title": "The Communist Manifesto",
+        "cover": "The Communist Manifesto.jpg",
+        "spineColor": "#3E2723"
+    },
+    {
+        "title": "1984",
+        "cover": "1984.jpg",
+        "spineColor": "#BF360C"
+    },
+    {
+        "title": "Mastery",
+        "cover": "Mastery.jpg",
+        "spineColor": "#800000"
+    },
+    {
+        "title": "The Laws of Human Nature",
+        "cover": "The Laws Of The Human Nature.jpg",
+        "spineColor": "#000080"
+    },
+    {
+        "title": "48 Laws of Power",
+        "cover": "48 Laws Of Power.jpg",
+        "spineColor": "#4B0082"
+    },
+    {
+        "title": "Atomic Habits",
+        "cover": "Atomic Habits_.jpg",
+        "spineColor": "#2E7D32"
+    },
+    {
+        "title": "The $100 Startup",
+        "cover": "$100 startup.jpg",
+        "spineColor": "#C62828"
+    },
+    {
+        "title": "Can't Hurt Me",
+        "cover": "Can't Hurt Me. Master Your Mind and Defy the Odds.jpg",
+        "spineColor": "#1565C0"
+    },
+    {
+        "title": "How To Win Friends",
+        "cover": "How To Win Friends and Influence People.jpg",
+        "spineColor": "#EF6C00"
+    },
+    {
+        "title": "Man's Search for Meaning",
+        "cover": "Man's Search for Meaning.jpg",
+        "spineColor": "#00838F"
+    },
+    {
+        "title": "Behave",
+        "cover": "Behave.jpg",
+        "spineColor": "#4527A0"
+    },
+    {
+        "title": "No Longer Human",
+        "cover": "No longer human.jpg",
+        "spineColor": "#AD1457"
+    },
+    {
+        "title": "Psychology of Money",
+        "cover": "Phychology of money.jpg",
+        "spineColor": "#283593"
+    },
+    {
+        "title": "Read People Like a Book",
+        "cover": "Read People Like a Book.jpg",
+        "spineColor": "#37474F"
+    },
+    {
+        "title": "Rich Dad Poor Dad",
+        "cover": "Rich dad poor dad.jpg",
+        "spineColor": "#D84315"
+    },
+    {
+        "title": "Sapiens",
+        "cover": "Sapiens – A brief history of Humankind Summary.jpg",
+        "spineColor": "#F9A825"
+    },
+    {
+        "title": "Show Your Work!",
+        "cover": "Show Your Work!.jpg",
+        "spineColor": "#00695C"
+    },
+    {
+        "title": "Steal Like an Artist",
+        "cover": "Steal Like an Artist.jpg",
+        "spineColor": "#2E7D32"
+    },
+    {
+        "title": "33 Strategies of War",
+        "cover": "The 33 Strategies of War.jpg",
+        "spineColor": "#C62828"
+    },
+    {
+        "title": "The Art of Seduction",
+        "cover": "The Art of Seduction by Robert Greene.jpg",
+        "spineColor": "#6A1B9A"
+    },
+    {
+        "title": "Diary of a Young Girl",
+        "cover": "The Diary of a Young Girl.jpg",
+        "spineColor": "#424242"
+    },
+    {
+        "title": "The Ramayana",
+        "cover": "The Ramayana.jpg",
+        "spineColor": "#FF8F00"
+    },
+    {
+        "title": "The Subtle Art",
+        "cover": "The Subtle Art of Not Giving a Fuck.jpg",
+        "spineColor": "#D32F2F"
+    },
+    {
+        "title": "The Intelligent Investor",
+        "cover": "The intelligent Investor.jpg",
+        "spineColor": "#1565C0"
+    },
+    {
+        "title": "The Mountain is You",
+        "cover": "The mountain is you.jpg",
+        "spineColor": "#546E7A"
+    },
+    {
+        "title": "Think and Grow Rich",
+        "cover": "Think and Grow Rich.jpg",
+        "spineColor": "#FBC02D"
+    },
+    {
+        "title": "Trump Style Negotiations",
+        "cover": "Trump style negotiations.jpg",
+        "spineColor": "#212121"
+    },
+    {
+        "title": "Body Language",
+        "cover": "body language.jpg",
+        "spineColor": "#212121"
+    }
+]

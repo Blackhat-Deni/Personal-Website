@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema — Top 4 Films</title>
+    <!-- Cinematic Typography Pack -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css?v=debug123">
+</head>
+
+<body class="theme-cinema fade-in">
+    <div class="cinema-container">
+        <header class="cinema-header">
+            <h1>My Top 4</h1>
+            <p class="cinema-tagline">Just a matter of perspective!</p>
+        </header>
+
+        <div id="cinema-content">
+            <!-- Data loaded from cinema.json -->
+        </div>
+
+        <div class="letterboxd-section">
+            <p class="cinema-tagline cta-text">For more lists, connect with me on</p>
+            <a href="https://boxd.it/dPcOn" target="_blank" class="letterboxd-link" title="Follow on Letterboxd">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <circle cx="5" cy="12" r="4.5" fill="#00e054"></circle>
+                    <circle cx="12" cy="12" r="4.5" fill="#ff8000"></circle>
+                    <circle cx="19" cy="12" r="4.5" fill="#00adfa"></circle>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- Note Overlay for Films -->
+    <div id="note-overlay" class="note-overlay">
+        <div class="note-content">
+            <span class="close-note">&times;</span>
+            <div class="note-text-container">
+                <h2 id="note-film-title">Film Title</h2>
+                <p id="note-film-director">Director Name</p>
+                <div class="note-divider"></div>
+                <p id="note-text">Personal note goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadCinemaData() {
+            try {
+                const response = await fetch('../data/cinema.json?v=' + Date.now());
+                if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+                const data = await response.json();
+
+                const cinemaContent = document.getElementById('cinema-content');
+
+                if (!data.categories) {
+                    throw new Error('JSON structure invalid: missing categories key');
+                }
+
+                cinemaContent.innerHTML = data.categories.map(category => `
+                    <h2 class="section-heading">${category.name}</h2>
+                    <div class="card-container">
+                        ${category.items.map(item => `
+                            <div class="card film-card" data-note="${item.note}">
+                                <div class="card-image">
+                                    <img src="${item.cover}" alt="${item.title}">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="film-title">${item.title}</h3>
+                                    <p class="film-director">${item.subtitle}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error loading cinema data:', error);
+                alert('CINEMA DATA LOAD ERROR: ' + error.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCinemaData);
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

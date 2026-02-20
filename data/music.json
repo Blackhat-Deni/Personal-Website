@@ -1,0 +1,271 @@
+{
+  "cds": [
+    {
+      "title": "Bagaichama najau timi",
+      "artist": "Udir Narayan Jha / Sadhana Sargam",
+      "cover": "../assets/images/music/songs/Bagaicha ma najau timi.jpg",
+      "favSong": "Bagaichama najau timi",
+      "note": "The lyrics of this song FR!! This song will always be in my heart."
+    },
+    {
+      "title": "Dont matter",
+      "artist": "Akon",
+      "cover": "../assets/images/music/songs/Don't matter.jpg",
+      "favSong": "Don't matter",
+      "note": "Akery is such a vibe creator. love this song!"
+    },
+    {
+      "title": "Life Goes On",
+      "artist": "2Pac",
+      "cover": "../assets/images/music/me against the world.jpg",
+      "favSong": "Life Goes On",
+      "note": "PAC!!! Honestly my most favourite rapper of all time. This song is my life motto FR!"
+    },
+    {
+      "title": "Not Afraid",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/recovery.jpg",
+      "favSong": "Not Afraid",
+      "note": "Eminem at his beast. truly an inspiration."
+    },
+    {
+      "title": "Till I Collapse",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/Till I Collapse.jpg",
+      "favSong": "Till I Collapse",
+      "note": "The ultimate pump-up song. The energy is unmatched."
+    },
+    {
+      "title": "Song Cry",
+      "artist": "Jay-Z",
+      "cover": "../assets/images/music/the blueprint.jpg",
+      "favSong": "Song Cry",
+      "note": "Jay-Z at his most vulnerable. A timeless classic."
+    },
+    {
+      "title": "PRIDE.",
+      "artist": "Kendrick Lamar",
+      "cover": "../assets/images/music/DAMN..jpg",
+      "favSong": "PRIDE.",
+      "note": "Kendrick is a poet. This track is so deep and makes you think twice about everything."
+    },
+    {
+      "title": "Dive",
+      "artist": "Ed Sheeran",
+      "cover": "../assets/images/music/Divide.jpg",
+      "favSong": "Dive",
+      "note": "The acoustic guitar and Ed's vocals here are just pure magic."
+    }
+  ],
+  "albums": [
+    {
+      "title": "Khoj",
+      "artist": "Arthur Gunn",
+      "cover": "../assets/images/music/Khoj.jpg",
+      "note": "Favorite Song: Khoj. This album is a milestone in Nepali rock history. 1974 AD at their absolute best."
+    },
+    {
+      "title": "My Beautiful Dark Twisted Fantasy",
+      "artist": "Kanye West",
+      "cover": "../assets/images/music/My Beautiful Dark Twisted Fantasy.jpg",
+      "favSong": "Devil In A New Dress",
+      "note": "Favorite Song: Devil In A New Dress. The production on this album is insane. Every track feels like an anthem."
+    },
+    {
+      "title": "DAMN.",
+      "artist": "Kendrick Lamar",
+      "cover": "../assets/images/music/DAMN..jpg",
+      "favSong": "PRIDE.",
+      "note": "Favorite Song: PRIDE. Kendrick is a poet. This album is so deep and makes you think twice about everything."
+    },
+    {
+      "title": "To Pimp A Butterfly",
+      "artist": "Kendrick Lamar",
+      "cover": "../assets/images/music/To Pimp A Butterfly!.jpg",
+      "favSong": "Alright",
+      "note": "Favorite Song: Alright. A truly iconic album that addresses important social issues gracefully."
+    },
+    {
+      "title": "Me Against The World",
+      "artist": "2Pac",
+      "cover": "../assets/images/music/me against the world.jpg",
+      "favSong": "Me Against The World",
+      "note": "Favorite Song: Me Against The World. This is the album that introduced me to poetry through wordplays. Can feel the authentic words of Tupac on this album FR!"
+    },
+    {
+      "title": "Good Kid, M.A.A.D City",
+      "artist": "Kendrick Lamar",
+      "cover": "../assets/images/music/good kid maad city.jpg",
+      "favSong": "Sing About Me, I'm Dying of Thirst",
+      "note": "Favorite Song: Sing About Me, I'm Dying of Thirst. poetry in another level."
+    },
+    {
+      "title": "Illmatic",
+      "artist": "Nas",
+      "cover": "../assets/images/music/Illmatic.jpg",
+      "favSong": "N.Y. State of Mind",
+      "note": "Favorite Song: N.Y. State of Mind. Greatest hip hop album of all time. Sleep is the cousin of death."
+    },
+    {
+      "title": "Get Rich Or Die Tryin'",
+      "artist": "50 Cent",
+      "cover": "../assets/images/music/Get Rich Or Die Tryin'.jpg",
+      "favSong": "Many Men (Wish Death)",
+      "note": "The energy on this debut is unmatched."
+    },
+    {
+      "title": "Life After Death",
+      "artist": "The Notorious B.I.G.",
+      "cover": "../assets/images/music/Life after death.jpg",
+      "favSong": "Hypnotize",
+      "note": "Pure East Coast Classic. The king of East, Notorious B.I.G reflected a ruthless persona on this one. Buttersmooth rhymes on a shaky boom box beats. Smells like NYC. effortless flows and when the beats get cold with razorsharp rhymes, Notorious B.I.G proves why he is the king of the East. "
+    },
+    {
+      "title": "2014 Forest Hills Drive",
+      "artist": "J. Cole",
+      "cover": "../assets/images/music/2014. Forest hill drive.jpg",
+      "favSong": "No Role Modelz",
+      "note": "Storytelling at its finest. It's like a musical biography."
+    },
+    {
+      "title": "Music To Be Murdered By",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/Music To Be Murdered By.jpg",
+      "favSong": "Godzilla",
+      "note": "I remember the first time I heard this album. I was there when it was released."
+    },
+    {
+      "title": "2001",
+      "artist": "Dr. Dre",
+      "cover": "../assets/images/music/2001.jpg",
+      "favSong": "Still D.R.E.",
+      "note": "A masterpiece of production and one of the most influential West Coast rap albums."
+    },
+    {
+      "title": "Born Sinner",
+      "artist": "J. Cole",
+      "cover": "../assets/images/music/Born Sinner.jpg",
+      "favSong": "Power Trip",
+      "note": "Cole's growth as an artist is so evident here. Power Trip is a classic."
+    },
+    {
+      "title": "Divide",
+      "artist": "Ed Sheeran",
+      "cover": "../assets/images/music/Divide.jpg",
+      "favSong": "Perfect",
+      "note": "So many hits on this one. Perfect for any mood."
+    },
+    {
+      "title": "Lokgeet Haru",
+      "artist": "Gyanu Rana",
+      "cover": "../assets/images/music/Gyanu rana ko Lokgeet haru.jpg",
+      "favSong": "Siri Ma Siri",
+      "note": "Classic Nepali folk music that brings back so many memories."
+    },
+    {
+      "title": "Know-It-All",
+      "artist": "Alessia Cara",
+      "cover": "../assets/images/music/Know-It-All.jpg",
+      "favSong": "Scars To Your Beautiful",
+      "note": "A great debut. Her voice is so unique and soulful."
+    },
+    {
+      "title": "No. 6 Collaborations Project",
+      "artist": "Ed Sheeran",
+      "cover": "../assets/images/music/No 6 Collaborations Project.jpg",
+      "favSong": "Beautiful People",
+      "note": "Love the variety of artists on this project. Really shows Ed's versatility."
+    },
+    {
+      "title": "The Off-Season",
+      "artist": "J. Cole",
+      "cover": "../assets/images/music/Off-Season.jpg",
+      "favSong": "m y . l i f e",
+      "note": "Pure lyricism. Cole is at the top of his game here."
+    },
+    {
+      "title": "The Pains of Growing",
+      "artist": "Alessia Cara",
+      "cover": "../assets/images/music/Pains Of Growing.jpg",
+      "favSong": "Growing Pains",
+      "note": "A beautiful, introspective look at growing up."
+    },
+    {
+      "title": "The Black Album",
+      "artist": "Jay-Z",
+      "cover": "../assets/images/music/The Black Album.jpg",
+      "favSong": "99 Problems",
+      "note": "Classic retirement (not really) album. Some of Jay's best work."
+    },
+    {
+      "title": "The Eminem Show",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/The Eminem Show - Eminem.jpg",
+      "favSong": "Till I Collapse",
+      "note": "Eminem at his peak commercial and critical success."
+    },
+    {
+      "title": "The Marshall Mathers LP",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/The Marshal Mathers LP.jpg",
+      "favSong": "The Real Slim Shady",
+      "note": "One of the fastest-selling albums in history. Raw and unfiltered."
+    },
+    {
+      "title": "X",
+      "artist": "Ed Sheeran",
+      "cover": "../assets/images/music/X.jpg",
+      "favSong": "Thinking Out Loud",
+      "note": "The album that made Ed a global superstar. Every song is a hit."
+    },
+    {
+      "title": "Ellie Greenwich",
+      "artist": "Ellie Greenwich",
+      "cover": "../assets/images/music/“Ellie Greenwich Composes, Produces And Sings” (1968, United Artists)  Her first LP.jpg",
+      "favSong": "Be My Baby",
+      "note": "A pioneer in the music industry. Her songwriting and production are legendary."
+    },
+    {
+      "title": "4:44",
+      "artist": "Jay-Z",
+      "cover": "../assets/images/music/4.44.jpg",
+      "favSong": "The Story of O.J.",
+      "note": "An incredibly honest and vulnerable album. A late-career masterpiece."
+    },
+    {
+      "title": "Reasonable Doubt",
+      "artist": "Jay-Z",
+      "cover": "../assets/images/music/reasonable doubt.jpg",
+      "favSong": "Can't Knock The Hustle",
+      "note": "The classic debut. Pure street poetry and flawless flow."
+    },
+    {
+      "title": "AM",
+      "artist": "Arctic Monkeys",
+      "cover": "../assets/images/music/AM.jpg",
+      "favSong": "Do I Wanna Know?",
+      "note": "Modern classic. Slick, dark, and incredibly cool."
+    },
+    {
+      "title": "Recovery",
+      "artist": "Eminem",
+      "cover": "../assets/images/music/recovery.jpg",
+      "favSong": "Not Afraid",
+      "note": "Life can get pretty hard sometimes, Its unpredictable, But when that time comes when i get badly down. The Recovery album catches me and grabs me tight. Containing songs from thought provoking to soul burning. Its an absollutly amazing album. Eminem created a masterpiece while recovering from drug addiction to take responsibility as a father(Goated momentum). All of the 17 tracks of the album is like a roaring engine. Whereas that beautifully currated wordplays act as fuel to that engine. That drumm.....I'm gonna stop. Go check up that album ASAP! It's beautiful!!"
+    },
+    {
+      "title": "The Blueprint",
+      "artist": "Jay-Z",
+      "cover": "../assets/images/music/the blueprint.jpg",
+      "favSong": "Renegade",
+      "note": "Luxury rap at its finest. Flawless production. One of the best Jay-Z albums."
+    },
+    {
+      "title": "Alfredo",
+      "artist": "Freddie Gibbs",
+      "cover": "../assets/images/music/Alfredo.jpg",
+      "favSong": "Scottie Beam",
+      "note": "A modern masterpiece. Freddie is one of the best lyricists out right now."
+    }
+  ]
+}
