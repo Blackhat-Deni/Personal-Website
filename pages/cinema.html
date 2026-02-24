@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema — Top 4 Films</title>
-    <!-- Cinematic Typography Pack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;700&family=Syne:wght@400;700;800&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css?v=debug123">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
 <body class="theme-cinema fade-in">
@@ -51,7 +52,7 @@
     <script>
         async function loadCinemaData() {
             try {
-                const response = await fetch('../data/cinema.json?v=' + Date.now());
+                const response = await fetch('../data/cinema.json');
                 if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
                 const data = await response.json();
 
@@ -67,7 +68,7 @@
                         ${category.items.map(item => `
                             <div class="card film-card" data-note="${item.note}">
                                 <div class="card-image">
-                                    <img src="${item.cover}" alt="${item.title}">
+                                    <img src="${item.cover}" alt="${item.title}" loading="lazy">
                                 </div>
                                 <div class="card-content">
                                     <h3 class="film-title">${item.title}</h3>
@@ -87,6 +88,13 @@
         document.addEventListener('DOMContentLoaded', loadCinemaData);
     </script>
     <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
 </body>
 
 </html>

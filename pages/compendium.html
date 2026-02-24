@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compendium | Learning Path</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&family=Pinyon+Script&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Google Fonts: JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         .compendium-page {
-            --text-color: #111111;
-            background-color: #fafaf9;
-            /* Fallback */
+            --text-color: #f5f5f4;
+            background-color: #0c0a09;
+            /* Deep stone-950 */
             color: var(--text-color);
             min-height: 100vh;
             position: relative;
@@ -32,7 +35,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background-color: #fafaf9;
+            background: linear-gradient(180deg, #0c0a09 0%, #1c1917 100%);
             pointer-events: none;
             overflow: hidden;
         }
@@ -101,12 +104,45 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: #888;
+            color: #57534e;
             transition: color 0.3s ease;
         }
 
         .back-link:hover {
-            color: #111;
+            color: #d4a853;
+        }
+
+        .compendium-title {
+            color: #f5f5f4;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .resource-card .card-content {
+            background: rgba(255, 255, 255, 0.5) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            backdrop-filter: blur(12px);
+        }
+
+        .resource-title {
+            color: #f5f5f4 !important;
+        }
+
+        .resource-description {
+            color: #242322 !important;
+        }
+
+        .source-link {
+            color: #78716c !important;
+        }
+
+        .source-link:hover {
+            color: #d4a853 !important;
+        }
+
+        .category-tag {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            color: #d4a853 !important;
+            border: 1px solid rgba(212, 168, 83, 0.2);
         }
     </style>
 </head>
@@ -121,14 +157,14 @@
         <a href="../index.html" class="back-link">Entryway</a>
     </nav>
 
-    <div class="container mx-auto px-4 py-24 max-w-6xl">
+    <div class="container mx-auto px-1 md:px-4 py-24 max-w-6xl w-full">
         <!-- THE COMPENDIUM Section -->
-        <section class="compendium-section">
+        <section class="compendium-section w-full">
             <div class="compendium-header mb-16 text-center">
                 <h1 class="compendium-title text-5xl uppercase tracking-[0.3em] font-light mb-4">THE COMPENDIUM</h1>
             </div>
 
-            <div id="compendium-grid" class="compendium-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="compendium-grid" class="compendium-grid grid grid-cols-3 md:grid-cols-3 gap-1 md:gap-8 w-full">
                 <!-- Data loaded from compendium.json -->
             </div>
         </section>
@@ -173,29 +209,15 @@
                 grid.innerHTML = data.resources.map(res => {
                     const colors = colorConfig[res.accent] || colorConfig.blue;
                     return `
-                        <div class="resource-card ui-card group">
-                            <div class="card-content flex flex-col h-full border border-stone-100 rounded-3xl overflow-hidden transition-all duration-500 ${colors.hoverBorder} hover:shadow-2xl ${colors.shadow} bg-white">
-                                <a href="${res.url}" target="_blank" class="block relative aspect-[16/10] overflow-hidden group/cover">
-                                    <img src="${res.thumbnail}" alt="${res.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover/cover:scale-110">
-                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center">
-                                        <div class="w-14 h-14 ${colors.playBtn} rounded-full flex items-center justify-center text-white shadow-lg transform scale-90 group-hover/cover:scale-100 transition-transform duration-500">
-                                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
-                                        </div>
-                                    </div>
+                        <div class="resource-card ui-card group w-full">
+                            <div class="card-content flex flex-col h-auto md:h-full border md:border rounded-none md:rounded-2xl overflow-hidden transition-all duration-700 ${colors.hoverBorder} hover:shadow-2xl ${colors.shadow}">
+                                <a href="${res.url}" target="_blank" class="block relative aspect-video w-full overflow-hidden bg-transparent group/cover border-b border-white/5 md:border-none">
+                                    <img src="${res.thumbnail}" alt="${res.title}" class="w-full h-full object-contain md:object-cover transition-transform duration-700 group-hover/cover:scale-105">
                                 </a>
-                                <div class="p-8 flex flex-col flex-grow">
-                                    <span class="category-tag text-[10px] font-bold tracking-tighter uppercase mb-4 py-1 px-3 ${colors.tagBg} ${colors.tagText} rounded-full w-fit">${res.category}</span>
-                                    <h3 class="resource-title text-2xl font-medium mb-4 font-mono text-stone-800">${res.title}</h3>
-                                    <p class="resource-description text-sm text-stone-500 mb-8 flex-grow leading-relaxed">${res.description}</p>
-                                    <div class="card-footer flex justify-between items-center border-t border-stone-50 pt-6">
-                                        <a href="${res.url}" target="_blank" class="source-link flex items-center gap-2 text-stone-400 group-hover:text-stone-900 transition-colors">
-                                            <i data-lucide="${res.type === 'youtube' ? 'youtube' : 'external-link'}" class="w-4 h-4"></i>
-                                            <span class="text-xs uppercase tracking-widest font-mono">${res.type === 'youtube' ? 'Watch' : 'Learn'}</span>
-                                        </a>
-                                        <div class="source-icon">
-                                            <i data-lucide="play" class="w-5 h-5 text-stone-300 ${colors.iconHover} transition-colors"></i>
-                                        </div>
-                                    </div>
+                                <div class="px-1 py-1.5 md:p-5 flex flex-col flex-grow items-start text-left bg-transparent">
+                                    <span class="category-tag text-[10px] font-bold tracking-tighter uppercase mb-2 md:mb-3 py-1 px-3 ${colors.tagBg} ${colors.tagText} rounded-full w-fit hidden md:inline-block">${res.category}</span>
+                                    <h3 class="resource-title text-[9px] sm:text-[10px] md:text-lg font-medium mb-0 md:mb-2 font-mono text-stone-200 md:text-stone-800 leading-tight md:leading-snug line-clamp-2 w-full">${res.title}</h3>
+                                    <p class="resource-description text-sm text-stone-400 md:text-stone-500 line-clamp-2 leading-relaxed mt-auto hidden md:block w-full">${res.description}</p>
                                 </div>
                             </div>
                         </div>

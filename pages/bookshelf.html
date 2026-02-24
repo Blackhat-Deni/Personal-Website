@@ -5,16 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css?v=debug123">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;700&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="theme-library fade-in">
     <!-- Header Removed -->
 
     <div class="library-container">
+        <div id="featured-favorite-wrapper" class="featured-favorite-section" style="margin-top: 4rem;">
+            <div class="featured-book-card">
+                <div class="featured-book-visual">
+                    <img src="../assets/images/books/The Laws Of The Human Nature.webp" alt="The Laws of Human Nature"
+                        class="featured-book-img">
+                    <div class="featured-book-glow"></div>
+                </div>
+                <div class="featured-book-info">
+                    <span class="featured-label">All-time Favorite</span>
+                    <h2 class="featured-title">The Laws of Human Nature</h2>
+                    <p class="featured-note">A deep analysis of human nature and behavior. This book is like a
+                        benchmarkh for me as i became a student of Human psyche</p>
+                </div>
+            </div>
+        </div>
         <div class="library-frame" id="bookshelf-container">
             <!-- Books will be loaded here via script.js -->
+        </div>
+    </div>
+
+    <!-- Book Cover Inspection Overlay -->
+    <div id="note-overlay" class="note-overlay">
+        <div class="book-overlay-content">
+            <span class="close-note">&times;</span>
+            <div class="book-cover-large">
+                <img id="overlay-book-cover" src="" alt="Book Cover">
+            </div>
+            <div class="book-overlay-info">
+                <h2 id="overlay-book-title"></h2>
+                <div class="note-divider"></div>
+            </div>
         </div>
     </div>
 

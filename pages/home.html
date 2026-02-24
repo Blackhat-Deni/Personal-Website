@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identity - Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css?v=debug123">
-    <!-- Google Fonts: JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&family=Pinyon+Script&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main-style-v1.css">
+
+
     <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         @keyframes spin-slow {
             from {
@@ -95,274 +98,154 @@
         <p class="email-text">denipun123@gmail.com</p>
     </div>
 
+
     <div class="home-wrapper">
         <main class="main-content">
             <section class="bio-dashboard">
                 <div class="bio-intro">
-                    <img src="../assets/images/profile/IMG_0546.jpg" alt="Profile Picture" class="profile-pic">
+                    <img src="../assets/images/profile/IMG_0546.jpg" alt="Profile Picture" class="profile-pic"
+                        loading="lazy">
                     <h1>It's Deni y'all</h1>
-                    <ul
-                        class="tagline-list flex flex-wrap justify-center items-center gap-x-4 gap-y-3 mt-8 text-white font-mono text-[12px] uppercase tracking-[0.25em] max-w-4xl mx-auto drop-shadow-sm">
+                    <ul class="tagline-list"
+                        style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:1rem;row-gap:0.75rem;margin-top:2rem;color:white;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.25em;max-width:56rem;margin-left:auto;margin-right:auto;">
                         <li>Cinephile</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Bookworm</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Aesthetic Minimalist</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Philosophical Journaler</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Relentless Learner</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Ruthless Pragmatist</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Self-Educator</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Psychologically Perceptive</li>
-                        <li class="text-white/40 select-none">•</li>
+                        <li style="color:rgba(255,255,255,0.4);user-select:none;">•</li>
                         <li>Student of Human Nature</li>
                     </ul>
                 </div>
-
-                <div class="flex flex-col gap-12">
-                    <!-- Focal Trio Section -->
-                    <div
-                        class="focal-trio flex flex-col md:flex-row justify-center items-center md:items-start gap-16 md:gap-48 py-40 border-b border-stone-100 mb-16">
-
-                        <!-- Skeletal Library Item -->
-                        <div class="flex flex-col items-center group">
-                            <a href="bookshelf.html"
-                                class="flex flex-col items-center text-decoration-none transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:brightness-125">
-                                <div
-                                    class="text-stone-400 drop-shadow-md group-hover:drop-shadow-xl transition-all duration-500 group-hover:skew-x-2">
-                                    <span
-                                        class="text-[176px] leading-none mb-4 block drop-shadow-md group-hover:drop-shadow-xl transition-all duration-500">🏛️</span>
-                                </div>
-                                <span
-                                    class="mt-10 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors">Library</span>
-                            </a>
-                        </div>
-
-                        <!-- 3D Gramophone Music Item -->
-                        <div class="flex flex-col items-center group">
-                            <a href="music.html"
-                                class="flex flex-col items-center text-decoration-none transition-all duration-500">
-                                <div class="gram-scene">
-                                    <div class="gram-body">
-                                        <!-- Large Golden Horn Bell -->
-                                        <div class="gram-horn">
-                                            <div class="gram-horn-flute gram-flute-1"></div>
-                                            <div class="gram-horn-flute gram-flute-2"></div>
-                                            <div class="gram-horn-flute gram-flute-3"></div>
-                                            <div class="gram-horn-flute gram-flute-4"></div>
-                                            <div class="gram-horn-flute gram-flute-5"></div>
-                                            <div class="gram-horn-highlight"></div>
-                                        </div>
-                                        <!-- Curved Tube from horn to cabinet -->
-                                        <div class="gram-tube">
-                                            <div class="gram-tube-curve"></div>
-                                            <div class="gram-tube-vertical"></div>
-                                        </div>
-                                        <!-- Golden Knob -->
-                                        <div class="gram-knob"></div>
-                                        <!-- Spinning Vinyl Record -->
-                                        <div class="gram-record">
-                                            <div class="gram-vinyl">
-                                                <div class="gram-groove gram-g1"></div>
-                                                <div class="gram-groove gram-g2"></div>
-                                                <div class="gram-groove gram-g3"></div>
-                                                <div class="gram-groove gram-g4"></div>
-                                                <div class="gram-groove gram-g5"></div>
-                                                <div class="gram-groove gram-g6"></div>
-                                                <div class="gram-vinyl-label"></div>
-                                                <div class="gram-vinyl-shine"></div>
-                                                <div class="gram-vinyl-hole"></div>
-                                            </div>
-                                        </div>
-                                        <!-- Mahogany Wooden Cabinet -->
-                                        <div class="gram-cabinet">
-                                            <div class="gram-cab-top"></div>
-                                            <div class="gram-cab-body">
-                                                <div class="gram-cab-trim-top"></div>
-                                                <div class="gram-cab-panel"></div>
-                                                <div class="gram-cab-trim-bottom"></div>
-                                            </div>
-                                            <div class="gram-cab-base"></div>
-                                            <!-- Feet -->
-                                            <div class="gram-foot gram-foot-fl"></div>
-                                            <div class="gram-foot gram-foot-fr"></div>
-                                        </div>
-                                        <!-- Crank Handle -->
-                                        <div class="gram-crank">
-                                            <div class="gram-crank-arm"></div>
-                                            <div class="gram-crank-handle"></div>
-                                        </div>
-                                        <!-- Shadow -->
-                                        <div class="gram-shadow"></div>
-                                    </div>
-                                </div>
-                                <span
-                                    class="mt-6 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors text-center">Music</span>
-                            </a>
-                        </div>
-
-                        <!-- 3D Clapperboard Cinema Item -->
-                        <div class="flex flex-col items-center group">
-                            <a href="cinema.html"
-                                class="flex flex-col items-center text-decoration-none transition-all duration-500 hover:brightness-125">
-                                <div class="clapper-container">
-                                    <div class="clapper-top"></div>
-                                    <div class="clapper-slate">
-                                        <div class="slate-info">
-                                            <span>Scene</span>
-                                            <span>Take</span>
-                                            <span>Roll</span>
-                                        </div>
-                                        <div class="slate-main-text">Deni's Top 4</div>
-                                    </div>
-                                </div>
-                                <span
-                                    class="mt-10 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors text-center">Cinema</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Secondary System Navigation -->
-                    <div class="dashboard-grid">
-                        <div class="dash-item interactive-item ui-card group">
-                            <a href="gallery.html"
-                                class="full-link flex flex-col items-center justify-center text-center">
-                                <span class="dash-label">Gallery</span>
-                                <div
-                                    class="gallery-icon-wrapper mt-4 transition-transform duration-500 group-hover:scale-110">
-                                    <i data-lucide="images" class="w-12 h-12 text-stone-500"
-                                        style="stroke-width: 1;"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="dash-item interactive-item ui-card group">
-                            <a href="about_deni.html"
-                                class="full-link flex flex-col items-center justify-center text-center">
-                                <span class="dash-label">About Me</span>
-                                <div
-                                    class="about-icon-wrapper mt-4 transition-transform duration-500 group-hover:scale-110">
-                                    <i data-lucide="user" class="w-12 h-12 text-stone-500" style="stroke-width: 1;"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </section>
 
-            <section class="video-showcase">
-                <div class="video-container">
-                    <video autoplay muted loop playsinline class="featured-video">
-                        <source src="Backgroung%20vedios/2025-12-13%2001.05.24.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </section>
+            <!-- Focal Trio Section -->
+            <div class="focal-trio">
 
-            <!-- My Projects Portal -->
-            <section class="projects-portal-container">
-                <div class="projects-portal-frame">
-                    <a href="project-a.html"
-                        class="engine-room-link flex flex-col items-center group text-decoration-none">
-                        <div class="engine-gear-wrapper mb-8">
-                            <i data-lucide="settings" class="engine-gear-lg" style="stroke-width: 0.5;"></i>
-                        </div>
+                <!-- Library Item -->
+                <div class="flex flex-col items-center group justify-center pt-8">
+                    <a href="bookshelf.html"
+                        class="flex flex-col items-center text-decoration-none transition-all duration-500">
+                        <img src="../assets/images/library_icon.png?v=1.1" alt="Library" class="focal-icon-2d">
                         <span
-                            class="engine-label text-[28px] uppercase text-center font-bold tracking-[0.3em] text-stone-800">My
-                            Projects</span>
+                            class="mt-6 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors text-center">Library</span>
                     </a>
                 </div>
-            </section>
 
-            <section
-                class="compendium-portal py-40 flex justify-center border-t border-stone-100/50 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-stone-50/50">
-                <a href="compendium.html" class="compendium-link-wrapper relative group flex flex-col items-center">
-                    <!-- Floating Ambient Glow -->
-                    <div
-                        class="absolute -inset-20 bg-gradient-to-r from-blue-50/20 via-emerald-50/20 to-amber-50/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
-                    </div>
-
-                    <!-- The Portal Card -->
-                    <div
-                        class="portal-card relative p-10 bg-white/60 backdrop-blur-sm border border-stone-200/50 rounded-[3rem] shadow-2xl shadow-stone-200/40 transition-all duration-700 group-hover:shadow-stone-300/40 group-hover:-translate-y-2 group-hover:scale-105">
-                        <!-- Icon Composition -->
-                        <div class="relative w-32 h-32 flex items-center justify-center">
-                            <i data-lucide="layers"
-                                class="absolute w-28 h-28 text-stone-100 transition-transform duration-700 group-hover:rotate-12 group-hover:scale-110"
-                                style="stroke-width: 0.5;"></i>
-                            <i data-lucide="sparkles"
-                                class="absolute -top-2 -right-2 w-8 h-8 text-amber-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></i>
-                            <i data-lucide="book-open"
-                                class="relative w-16 h-16 text-stone-800 transition-transform duration-500 group-hover:scale-95"
-                                style="stroke-width: 1.2;"></i>
-                        </div>
-
-                        <!-- Glowing Ring -->
-                        <div
-                            class="absolute inset-0 rounded-[3rem] border border-stone-300/0 group-hover:border-stone-400/20 transition-all duration-700">
-                        </div>
-                    </div>
-
-                    <!-- Text Styling -->
-                    <div class="mt-10 text-center">
+                <!-- Music Item -->
+                <div class="flex flex-col items-center group justify-center pt-8">
+                    <a href="music.html"
+                        class="flex flex-col items-center text-decoration-none transition-all duration-500">
+                        <img src="../assets/images/phonograph_icon.png?v=1.1" alt="Music" class="focal-icon-2d">
                         <span
-                            class="engine-label block text-[24px] uppercase font-light tracking-[0.4em] text-stone-800 transition-colors duration-500 group-hover:text-stone-950">
-                            The Compendium
-                        </span>
-                        <p
-                            class="mt-4 text-stone-400 font-mono text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-2 group-hover:translate-y-0">
-                            Curated Learning Paths & Resources
-                        </p>
-                    </div>
-                </a>
-            </section>
-
-            <section
-                class="studio-portal py-40 flex justify-center border-t border-stone-100/50 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-orange-50/30">
-                <div
-                    class="portal-card relative p-10 bg-white/60 backdrop-blur-sm border border-stone-200/50 rounded-[3rem] shadow-2xl shadow-stone-200/40 transition-all duration-700 group-hover:shadow-orange-200/40 group-hover:-translate-y-2 group-hover:scale-105">
-                    <!-- Icon Composition -->
-                    <div class="relative w-32 h-32 flex items-center justify-center">
-                        <i data-lucide="aperture"
-                            class="absolute w-28 h-28 text-orange-50 transition-transform duration-1000 group-hover:rotate-180 group-hover:scale-110"
-                            style="stroke-width: 0.5;"></i>
-                        <i data-lucide="settings"
-                            class="absolute -top-1 -right-1 w-8 h-8 text-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></i>
-                        <i data-lucide="layout-dashboard"
-                            class="relative w-16 h-16 text-stone-800 transition-transform duration-500 group-hover:scale-105"
-                            style="stroke-width: 1.2;"></i>
-                    </div>
-
-                    <!-- Glowing Ring -->
-                    <div
-                        class="absolute inset-0 rounded-[3rem] border border-orange-300/0 group-hover:border-orange-400/20 transition-all duration-700">
-                    </div>
+                            class="mt-6 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors text-center">Music</span>
+                    </a>
                 </div>
 
-                <!-- Text Styling -->
-                <div class="mt-10 text-center">
-                    <span
-                        class="engine-label block text-[24px] uppercase font-light tracking-[0.4em] text-stone-800 transition-colors duration-500 group-hover:text-stone-950">
-                        The Studio
-                    </span>
-                    <p
-                        class="mt-4 text-stone-400 font-mono text-[10px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-2 group-hover:translate-y-0">
-                        Access Admin Dashboard
-                    </p>
+                <!-- Cinema Item -->
+                <div class="flex flex-col items-center group justify-center pt-8">
+                    <a href="cinema.html"
+                        class="flex flex-col items-center text-decoration-none transition-all duration-500">
+                        <img src="../assets/images/cinema_icon.png?v=1.1" alt="Cinema" class="focal-icon-2d">
+                        <span
+                            class="mt-6 text-[20px] uppercase tracking-[0.3em] font-light text-stone-500 group-hover:text-stone-900 transition-colors text-center">Cinema</span>
+                    </a>
                 </div>
-                </a>
-            </section>
+            </div>
 
+            <!-- Secondary System Navigation -->
+            <div class="dashboard-grid">
+                <div class="dash-item interactive-item ui-card group">
+                    <a href="gallery.html" class="full-link"
+                        style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+                        <span class="dash-label">Gallery</span>
+                        <div class="gallery-icon-wrapper" style="margin-top:0.5rem;transition:transform 0.5s;">
+                            <i data-lucide="images" style="width:3rem;height:3rem;color:#78716c;stroke-width:1;"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="dash-item interactive-item ui-card group">
+                    <a href="about_deni.html" class="full-link"
+                        style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+                        <span class="dash-label">About Me</span>
+                        <div class="about-icon-wrapper" style="margin-top:0.5rem;transition:transform 0.5s;">
+                            <i data-lucide="user" style="width:3rem;height:3rem;color:#78716c;stroke-width:1;"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </main>
     </div>
+
+    <section class="video-showcase">
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="featured-video">
+                <source src="../assets/videos/Home page video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Main Portals -->
+    <section class="main-portals-container"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; gap: 4rem; padding: 4rem 0; border-top: 1px solid rgba(245, 245, 244, 0.5); background: radial-gradient(circle at center, rgba(250,250,249,0.5) 0%, transparent 70%);">
+
+        <!-- My Projects Portal -->
+        <a href="project-a.html" class="engine-room-link">
+            <div class="engine-gear-wrapper" style="margin-bottom: 2rem;">
+                <i data-lucide="settings" class="engine-gear-lg engine-gear"
+                    style="stroke-width: 0.5; width: 100px; height: 100px;"></i>
+            </div>
+            <span class="engine-label"
+                style="font-size: 32px; text-transform: uppercase; text-align: center; font-weight: bold; letter-spacing: 0.3em; color: #4B5563;">My
+                Projects</span>
+        </a>
+
+        <!-- The Compendium -->
+        <a href="compendium.html" class="engine-room-link">
+            <div class="engine-gear-wrapper" style="margin-bottom: 2rem;">
+                <i data-lucide="book-open" class="engine-gear-lg engine-gear"
+                    style="stroke-width: 0.5; width: 100px; height: 100px;"></i>
+            </div>
+            <span class="engine-label"
+                style="font-size: 32px; text-transform: uppercase; text-align: center; font-weight: bold; letter-spacing: 0.3em; color: #4B5563;">Compendium</span>
+        </a>
+
+    </section>
+
+    <!-- Small Studio Button at the End -->
+    <div class="end-page-studio-wrapper">
+        <a href="../admin/" class="studio-button-small">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Studio</span>
+        </a>
+    </div>
+
+    <!-- Version Footer -->
+    <footer class="version-footer pb-8 pt-12 flex justify-center items-center w-full">
+        <span class="text-stone-400 font-mono text-[11px] uppercase tracking-[0.3em]">
+            System Architecture V.1.3 // Online
+        </span>
+    </footer>
 
     <script src="../assets/js/script.js"></script>
     <script>
         // Initialize Lucide icons
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 

@@ -8,7 +8,7 @@ if %ERRORLEVEL% equ 0 (
     echo 2. Go to this link in your browser: http://localhost:8000
     echo.
     start http://localhost:8000
-    python -m http.server 8000
+    python server.py
 ) else (
     echo [FAIL] Python not found.
     pause

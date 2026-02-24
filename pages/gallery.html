@@ -7,12 +7,13 @@
     <title>Gallery Wall | Digital Craftsman Portfolio</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <!-- Alpine.js CDN -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -58,7 +59,7 @@
             <div @click="openLightbox('textures')"
                 class="md:col-span-5 md:row-span-6 md:col-start-1 md:row-start-11 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden ui-card">
                 <img src="https://images.unsplash.com/photo-1510784722466-f2aa9c52fed6?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
 
@@ -67,14 +68,14 @@
             <div
                 class="md:col-span-5 md:row-span-5 md:col-start-6 md:row-start-7 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden ui-card">
                 <img src="https://images.unsplash.com/photo-1490735891913-40897cdaafd1?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- 60x50 very large landscape -->
             <div @click="openLightbox('workspace')"
                 class="md:col-span-7 md:row-span-9 md:col-start-6 md:row-start-13 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden ui-card">
                 <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800"
-                    class="w-full h-full object-cover duration-700">
+                    class="w-full h-full object-cover duration-700" loading="lazy">
             </div>
 
 
@@ -83,21 +84,22 @@
             <div @click="openLightbox('light')"
                 class="md:col-span-6 md:row-span-10 md:col-start-11 md:row-start-2 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden ui-card">
                 <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    loading="lazy">
             </div>
 
             <!-- 40x30 portrait-ish (middle center) -->
             <div
                 class="md:col-span-4 md:row-span-7 md:col-start-14 md:row-start-13 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden ui-card">
                 <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=400"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- 24x30 portrait (small center bot) -->
             <div
                 class="md:col-span-3 md:row-span-4 md:col-start-14 md:row-start-21 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden transform hover:rotate-1 transition-transform ui-card">
                 <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=400"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- Column 4 (Mid Right) -->
@@ -105,21 +107,21 @@
             <div
                 class="md:col-span-5 md:row-span-5 md:col-start-18 md:row-start-4 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- 24x30 portrait (center mid-right) -->
             <div
                 class="md:col-span-3 md:row-span-5 md:col-start-18 md:row-start-10 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden transform hover:-rotate-1 transition-transform">
                 <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=400"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- 50x40 landscape (bottom mid-right) -->
             <div
                 class="md:col-span-6 md:row-span-7 md:col-start-18 md:row-start-16 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- Column 5 (Far Right) -->
@@ -127,14 +129,14 @@
             <div
                 class="md:col-span-5 md:row-span-5 md:col-start-22 md:row-start-9 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden transform hover:rotate-1 transition-transform">
                 <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600"
-                    class="w-full h-full object-cover">
+                    class="w-full h-full object-cover" loading="lazy">
             </div>
 
             <!-- User Uploads (Dynamic Slot) -->
             <template x-if="collections.uploads.images.length > 0">
                 <div @click="openLightbox('uploads')"
                     class="md:col-span-4 md:row-span-5 group cursor-pointer relative bg-white p-2 frame-shadow frame-border overflow-hidden transform animate-fade-in -rotate-2">
-                    <img :src="collections.uploads.images[0]" class="w-full h-full object-cover">
+                    <img :src="collections.uploads.images[0]" class="w-full h-full object-cover" loading="lazy">
                 </div>
             </template>
 
@@ -160,7 +162,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <template x-for="(img, index) in collections[currentCategory].images" :key="index">
                     <div class="aspect-square bg-stone-900 border border-white/5 overflow-hidden">
-                        <img :src="img" class="w-full h-full object-cover">
+                        <img :src="img" class="w-full h-full object-cover" loading="lazy">
                     </div>
                 </template>
             </div>

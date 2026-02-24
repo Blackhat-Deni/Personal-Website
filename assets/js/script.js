@@ -25,16 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
+            const target = link.getAttribute('target');
 
-            // Only intercept internal links
-            if (href && !href.startsWith('http') && !href.startsWith('#')) {
+            // Only intercept internal links that don't open in a new tab
+            if (href &&
+                !href.startsWith('http') &&
+                !href.startsWith('mailto:') &&
+                !href.startsWith('tel:') &&
+                !href.startsWith('#') &&
+                target !== '_blank') {
+
+                console.log(`THE STUDIO: Navigating to ${href}`);
                 e.preventDefault();
                 document.body.classList.remove('fade-in');
                 document.body.classList.add('fade-out');
 
+                // Navigate after a brief fade-out (150ms keeps it snappy)
                 setTimeout(() => {
                     window.location.href = href;
-                }, 500); // Matches CSS transition duration
+                }, 150);
             }
         });
     });
@@ -266,8 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.addEventListener('click', (e) => {
             const musicCard = e.target.closest('.album-card, .cd-card');
             const filmCard = e.target.closest('.film-card');
+            const bookCard = e.target.closest('.book');
+            const featuredBook = e.target.closest('.featured-book-card');
 
             if (musicCard) {
+                // ... (Existing Music Logic)
                 const title = musicCard.querySelector('.card-title').textContent;
                 const artist = musicCard.querySelector('.card-subtitle').textContent;
                 const note = musicCard.getAttribute('data-note');
@@ -295,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 noteOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else if (filmCard) {
+                // ... (Existing Film Logic)
                 const title = filmCard.querySelector('.film-title').textContent;
                 const director = filmCard.querySelector('.film-director').textContent;
                 const note = filmCard.getAttribute('data-note');
@@ -307,6 +320,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 noteOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
+            } else if (bookCard || featuredBook) {
+                if (noteOverlay) {
+                    let title, imgSrc;
+                    if (bookCard) {
+                        title = bookCard.querySelector('.spine').textContent;
+                        imgSrc = bookCard.querySelector('img').src;
+                    } else {
+                        title = featuredBook.querySelector('.featured-title').textContent;
+                        imgSrc = featuredBook.querySelector('img').src;
+                    }
+
+                    const overlayImg = document.getElementById('overlay-book-cover');
+                    const overlayTitle = document.getElementById('overlay-book-title');
+
+                    if (overlayImg) overlayImg.src = imgSrc;
+                    if (overlayTitle) overlayTitle.textContent = title;
+
+                    noteOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
             }
         });
 
@@ -341,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!bookshelfContainer) return;
 
         try {
-            const response = await fetch('../data/books.json?v=' + Date.now());
+            const response = await fetch('../data/books.json');
             if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
             const data = await response.json();
 
@@ -385,12 +418,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const noOverlapClass = (index === 15 || index === 22) ? 'no-overlap' : '';
 
+                // Robust Image Path Resolution
+                let bookImg = book.cover;
+                if (bookImg) {
+                    if (bookImg.startsWith('..')) {
+                        // Keep as is (already relative)
+                    } else if (bookImg.startsWith('/')) {
+                        // Absolute path (new CMS format) - fine as is for most servers
+                    } else if (bookImg.startsWith('assets/')) {
+                        // Root assets path - make it absolute
+                        bookImg = '/' + bookImg;
+                    } else {
+                        // Just a filename - assume legacy book path
+                        bookImg = `../assets/images/books/${bookImg}`;
+                    }
+                }
+
                 shelfHTML += `
                             <div class="book ${noOverlapClass}" style="--spine-color: ${book.spineColor};">
                                 <div class="book-inner card">
                                     <div class="spine">${book.title}</div>
                                     <div class="cover">
-                                        <img src="../assets/images/books/${encodeURIComponent(book.cover)}" alt="${book.title}" loading="lazy">
+                                        <img src="${bookImg}" alt="${book.title}" loading="lazy" onerror="this.src='/assets/images/books/placeholder.jpg'">
                                     </div>
                                 </div>
                             </div>

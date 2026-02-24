@@ -7,11 +7,12 @@
     <title>About Deni</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -283,7 +284,7 @@
                         <!-- Namlo Hotel -->
                         <div class="timeline-node flower-node">
                             <i data-lucide="flower" class="flower-icon"></i>
-                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Captain Waiter
+                            <h3 style="font-size: 1.1rem; font-weight: 500; color: #1c1917; margin: 0;">Kitchen Helper
                             </h3>
                             <p style="font-size: 0.95rem; font-weight: 700; color: #1c1917; margin: 0.4rem 0 0 0;">Namlo
                                 Hotel</p>
@@ -368,7 +369,14 @@
                 Deni &reg; 2026</p>
         </footer>
     </div>
-    <script>lucide.createIcons();</script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&family=Syne:wght@400;700;800&family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Netlify Identity Widget -->
@@ -16,7 +16,7 @@
 
     <style>
         /* ═══════════════════════════════════════════════════════
-           THE STUDIO — Custom Admin Theme
+           THE STUDIO — Custom Admin Theme (Refined)
            Dark, premium aesthetic matching the main site
            ═══════════════════════════════════════════════════════ */
 
@@ -28,13 +28,15 @@
         body {
             font-family: 'Inter', -apple-system, sans-serif !important;
             background: #0a0a0a !important;
+            margin: 0;
+            color: #e0e0e0;
         }
 
         /* ─── Top Navigation Bar ─── */
         header[class*="AppHeader"],
         nav[class*="Navbar"],
         div[class*="AppHeader"] {
-            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%) !important;
+            background: #111111 !important;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
         }
@@ -45,16 +47,17 @@
         div[class*="AppHeader"] a:first-child {
             font-family: 'Space Mono', monospace !important;
             font-size: 0.85rem !important;
-            letter-spacing: 0.2em !important;
+            letter-spacing: 0.25em !important;
             text-transform: uppercase !important;
-            color: #e0e0e0 !important;
+            color: #d4a853 !important;
+            font-weight: 700 !important;
         }
 
         /* ─── Sidebar / Collection List ─── */
         aside,
         div[class*="Sidebar"],
         nav[class*="Collection"] {
-            background: #111111 !important;
+            background: #0a0a0a !important;
             border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
         }
 
@@ -62,27 +65,28 @@
         a[class*="SidebarNavLink"],
         div[class*="Sidebar"] a,
         nav[class*="Collection"] a {
-            color: #999 !important;
+            color: #888 !important;
             font-family: 'Inter', sans-serif !important;
             font-weight: 400 !important;
             letter-spacing: 0.05em !important;
-            transition: all 0.2s ease !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
             border-left: 3px solid transparent !important;
-            padding: 10px 20px !important;
+            padding: 12px 24px !important;
+            margin: 4px 0 !important;
         }
 
         a[class*="SidebarNavLink"]:hover,
         div[class*="Sidebar"] a:hover,
         nav[class*="Collection"] a:hover {
             color: #ffffff !important;
-            background: rgba(255, 255, 255, 0.04) !important;
-            border-left-color: #d4a853 !important;
+            background: rgba(212, 168, 83, 0.04) !important;
+            border-left-color: rgba(212, 168, 83, 0.4) !important;
         }
 
         a[class*="SidebarNavLink"][class*="active"],
         div[class*="Sidebar"] a[class*="active"] {
-            color: #ffffff !important;
-            background: rgba(212, 168, 83, 0.08) !important;
+            color: #d4a853 !important;
+            background: rgba(212, 168, 83, 0.1) !important;
             border-left-color: #d4a853 !important;
             font-weight: 600 !important;
         }
@@ -92,7 +96,7 @@
         div[class*="Main"],
         section[class*="EntryListing"],
         div[class*="entriesPanel"] {
-            background: #0f0f0f !important;
+            background: #0a0a0a !important;
         }
 
         /* ─── Cards / Entry Items ─── */
@@ -101,49 +105,18 @@
         li[class*="EntryListing"],
         div[class*="objectControl"],
         div[class*="listControl"] {
-            background: #1a1a1a !important;
-            border: 1px solid rgba(255, 255, 255, 0.06) !important;
+            background: #141414 !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
             border-radius: 12px !important;
-            transition: all 0.3s ease !important;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
         }
 
         div[class*="ListCard"]:hover,
         div[class*="EntryCard"]:hover {
             border-color: rgba(212, 168, 83, 0.3) !important;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
-            transform: translateY(-1px) !important;
-        }
-
-        /* ─── Typography ─── */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #e0e0e0 !important;
-            font-family: 'Inter', sans-serif !important;
-        }
-
-        h1 {
-            font-weight: 300 !important;
-            letter-spacing: 0.1em !important;
-        }
-
-        p,
-        span,
-        label,
-        div {
-            color: #bbb !important;
-        }
-
-        label[class*="ControlLabel"],
-        label[for] {
-            color: #888 !important;
-            font-family: 'Space Mono', monospace !important;
-            font-size: 0.75rem !important;
-            letter-spacing: 0.15em !important;
-            text-transform: uppercase !important;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+            transform: translateY(-2px) !important;
         }
 
         /* ─── Form Inputs ─── */
@@ -154,12 +127,12 @@
         textarea,
         select {
             background: #1a1a1a !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
             border-radius: 8px !important;
             color: #e0e0e0 !important;
             font-family: 'Inter', sans-serif !important;
-            padding: 10px 14px !important;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+            padding: 12px 16px !important;
+            transition: all 0.3s ease !important;
         }
 
         input:focus,
@@ -167,7 +140,7 @@
         select:focus {
             border-color: #d4a853 !important;
             box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15) !important;
-            outline: none !important;
+            background: #222 !important;
         }
 
         /* ─── Buttons ─── */
@@ -176,30 +149,36 @@
         a[class*="Button"] {
             font-family: 'Space Mono', monospace !important;
             font-size: 0.75rem !important;
-            letter-spacing: 0.1em !important;
+            letter-spacing: 0.15em !important;
             text-transform: uppercase !important;
             border-radius: 8px !important;
             transition: all 0.3s ease !important;
+            font-weight: 600 !important;
         }
 
         /* Primary action buttons (Publish, Save) */
         button[class*="PublishButton"],
         div[class*="ToolbarSection"] button:last-child {
-            background: linear-gradient(135deg, #d4a853 0%, #b8892e 100%) !important;
-            color: #111 !important;
+            background: #d4a853 !important;
+            color: #000 !important;
             border: none !important;
-            font-weight: 700 !important;
             box-shadow: 0 4px 15px rgba(212, 168, 83, 0.3) !important;
         }
 
         button[class*="PublishButton"]:hover {
-            box-shadow: 0 6px 25px rgba(212, 168, 83, 0.5) !important;
+            background: #e5b964 !important;
+            box-shadow: 0 8px 25px rgba(212, 168, 83, 0.5) !important;
             transform: translateY(-1px) !important;
+        }
+
+        /* ─── Editor Header / Breadcrumbs ─── */
+        div[class*="EditorHeader"] {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
         }
 
         /* ─── Scrollbar ─── */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -207,67 +186,43 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 3px;
+            background: #222;
+            border-radius: 4px;
+            border: 2px solid #0a0a0a;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #333;
         }
 
-        /* ─── Loading Screen ─── */
-        div[class*="AppMainContainer"]::before {
-            background: #0a0a0a !important;
+        /* ─── Preview Pane ─── */
+        div[class*="PaneContainer"] {
+            background: #0f0f0f !important;
+            border-left: 1px solid rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* ─── Dropdown Menus ─── */
-        ul[class*="Dropdown"],
-        div[class*="Dropdown"] {
-            background: #1a1a1a !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 8px !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
-        }
-
-        /* ─── List Item Summaries ─── */
-        div[class*="ListItemTopBar"],
-        div[class*="TopBar"] {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-        }
-
-        div[class*="summary"],
-        span[class*="summary"] {
-            font-family: 'Inter', sans-serif !important;
-            color: #ccc !important;
-        }
-
-        /* ─── Toggle / Switch ─── */
-        span[class*="Toggle"] {
-            background: #333 !important;
-        }
-
-        /* ─── Status Labels ─── */
-        span[class*="status"],
-        div[class*="StatusTag"] {
+        /* Custom Label Styling */
+        label[class*="ControlLabel"] {
+            color: #888 !important;
             font-family: 'Space Mono', monospace !important;
-            font-size: 0.65rem !important;
-            letter-spacing: 0.1em !important;
-        }
-
-        /* ─── Color Picker Enhancement ─── */
-        input[type="color"] {
-            border-radius: 50% !important;
-            width: 40px !important;
-            height: 40px !important;
-            border: 2px solid rgba(255, 255, 255, 0.1) !important;
-            cursor: pointer !important;
+            font-size: 0.7rem !important;
+            letter-spacing: 0.2em !important;
+            text-transform: uppercase !important;
+            margin-bottom: 8px !important;
+            display: block !important;
         }
 
         /* ─── Netlify Identity Modal ─── */
-        .netlify-identity-page,
-        .netlify-identity-form,
-        .netlify-identity-widget {
-            font-family: 'Inter', sans-serif !important;
+        .netlify-identity-menu,
+        .netlify-identity-form {
+            background: #141414 !important;
+            color: #fff !important;
+            border: 1px solid #333 !important;
+        }
+
+        .netlify-identity-btn {
+            background: #d4a853 !important;
+            color: #000 !important;
         }
     </style>
 </head>
@@ -278,7 +233,9 @@
 
     <!-- Netlify Identity Redirect Handler -->
     <script>
-        if (window.netlifyIdentity) {
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+        if (window.netlifyIdentity && !isLocal) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.netlifyIdentity.on("login", () => {
@@ -287,6 +244,185 @@
                 }
             });
         }
+
+        // Only handle specific local login cues if needed, 
+        // but generally Decap local backend handles itself.
+        document.addEventListener('DOMContentLoaded', () => {
+            if (isLocal) {
+                console.log("THE STUDIO: Running in Local Mode. Netlify Identity disabled.");
+            }
+        });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════
+       LIVE PREVIEW TEMPLATES
+       Rendering site components exactly as they appear live
+       ═══════════════════════════════════════════════════════ -->
+    <script>
+        const h = window.h;
+
+        // --- Helper to fix image paths for preview ---
+        const fixImg = (src) => {
+            if (!src) return '';
+            // If it starts with ../, we resolve it relative to root
+            if (src.startsWith('../')) return src.substring(2);
+            // If it's just a filename (for books), we add the path
+            if (!src.includes('/')) return `/assets/images/books/${src}`;
+            return src.startsWith('/') ? src : `/${src}`;
+        };
+
+        // ════════════ BOOK PREVIEW ════════════
+        const BooksPreview = createClass({
+            render: function () {
+                const entry = this.props.entry;
+                const items = entry.getIn(['data', 'items']);
+
+                return h('div', { className: 'theme-library library-page' },
+                    h('div', { className: 'library-container' },
+                        h('div', { className: 'library-frame' },
+                            h('div', { className: 'shelf' },
+                                items && items.map((book, index) =>
+                                    h('div', {
+                                        key: index,
+                                        className: 'book',
+                                        style: { '--spine-color': book.get('spineColor') || '#333' }
+                                    },
+                                        h('div', { className: 'book-inner card' },
+                                            h('div', { className: 'spine' }, book.get('title')),
+                                            h('div', { className: 'cover' },
+                                                h('img', { src: fixImg(book.get('cover')) })
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                );
+            }
+        });
+
+        // ════════════ MUSIC PREVIEW ════════════
+        const MusicPreview = createClass({
+            render: function () {
+                const entry = this.props.entry;
+                const cds = entry.getIn(['data', 'cds']);
+                const albums = entry.getIn(['data', 'albums']);
+
+                return h('div', { className: 'theme-music' },
+                    h('div', { className: 'max-w-7xl mx-auto px-8' },
+                        h('h2', { className: 'cd-tagline' }, 'Songs (CDs)'),
+                        h('div', { className: 'songs-grid' },
+                            cds && cds.map((cd, index) =>
+                                h('div', { key: index, className: 'album-card group' },
+                                    h('div', { className: 'cd-visual' },
+                                        h('img', { src: fixImg(cd.get('cover')), className: 'cd-cover' }),
+                                        h('div', { className: 'cd-hole' })
+                                    ),
+                                    h('div', { className: 'album-info' },
+                                        h('h3', { className: 'card-title' }, cd.get('title')),
+                                        h('p', { className: 'card-subtitle' }, cd.get('artist'))
+                                    )
+                                )
+                            )
+                        ),
+                        h('h2', { className: 'cd-tagline', style: { marginTop: '80px' } }, 'Albums'),
+                        h('div', { className: 'album-grid' },
+                            albums && albums.map((album, index) =>
+                                h('div', { key: index, className: 'album-card group' },
+                                    h('div', { className: 'album-cover-wrapper' },
+                                        h('img', { src: fixImg(album.get('cover')), className: 'card-image' })
+                                    ),
+                                    h('div', { className: 'album-info' },
+                                        h('h3', { className: 'card-title' }, album.get('title')),
+                                        h('p', { className: 'card-subtitle' }, album.get('artist'))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                );
+            }
+        });
+
+        // ════════════ CINEMA PREVIEW ════════════
+        const CinemaPreview = createClass({
+            render: function () {
+                const entry = this.props.entry;
+                const categories = entry.getIn(['data', 'categories']);
+
+                return h('div', { className: 'theme-cinema' },
+                    categories && categories.map((cat, catIndex) =>
+                        h('div', { key: catIndex, className: 'category-section' },
+                            h('h2', { className: 'category-name' }, cat.get('name')),
+                            h('div', { className: 'film-grid' },
+                                cat.get('items') && cat.get('items').map((item, itemIndex) =>
+                                    h('div', { key: itemIndex, className: 'film-card group' },
+                                        h('div', { className: 'film-poster-wrapper' },
+                                            h('img', { src: fixImg(item.get('cover')), className: 'film-poster' })
+                                        ),
+                                        h('div', { className: 'film-info' },
+                                            h('h3', { className: 'film-title' }, item.get('title')),
+                                            h('p', { className: 'film-director' }, item.get('subtitle'))
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                );
+            }
+        });
+
+        // ════════════ COMPENDIUM PREVIEW ════════════
+        const CompendiumPreview = createClass({
+            render: function () {
+                const entry = this.props.entry;
+                const resources = entry.getIn(['data', 'resources']);
+
+                return h('div', { style: { padding: '40px', background: '#0a0a0a' } },
+                    h('div', { className: 'compendium-grid' },
+                        resources && resources.map((res, index) =>
+                            h('div', { key: index, className: 'resource-card' },
+                                h('div', { className: 'category-tag', style: { color: res.get('accent') === 'emerald' ? '#10b981' : (res.get('accent') === 'stone' ? '#888' : '#0ea5e9') } }, res.get('category')),
+                                h('h3', { className: 'resource-title' }, res.get('title')),
+                                h('p', { className: 'resource-description' }, res.get('description'))
+                            )
+                        )
+                    )
+                );
+            }
+        });
+
+        // ════════════ GALLERY PREVIEW ════════════
+        const GalleryPreview = createClass({
+            render: function () {
+                const entry = this.props.entry;
+                const items = entry.getIn(['data', 'gallery']);
+
+                return h('div', { className: 'gallery-page', style: { padding: '40px' } },
+                    h('div', { className: 'gallery-wall', style: { display: 'block' } },
+                        items && items.map((item, index) =>
+                            h('div', { key: index, style: { marginBottom: '30px', border: '4px solid #111', boxShadow: '8px 10px 25px rgba(0,0,0,0.1)' } },
+                                h('img', { src: item.get('url'), style: { width: '100%', display: 'block' } }),
+                                h('div', { style: { padding: '10px', background: '#000', color: '#fff', fontSize: '10px', textAlign: 'center' } }, item.get('title'))
+                            )
+                        )
+                    )
+                );
+            }
+        });
+
+        // --- Register Styles for Preview Pane ---
+        CMS.registerPreviewStyle("../assets/css/style.css");
+        CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&family=Syne:wght@400;700;800&family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+
+        // --- Register Templates ---
+        CMS.registerPreviewTemplate("books", BooksPreview);
+        CMS.registerPreviewTemplate("music", MusicPreview);
+        CMS.registerPreviewTemplate("cinema", CinemaPreview);
+        CMS.registerPreviewTemplate("compendium", CompendiumPreview);
+        CMS.registerPreviewTemplate("gallery", GalleryPreview);
     </script>
 </body>
 

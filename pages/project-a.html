@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Portal — Crafting Digital Worlds</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         .project-page {
             max-width: 900px;
@@ -342,139 +347,262 @@
 
 <body class="theme-projects fade-in">
     <div class="project-page">
-        <section class="folder-section" id="main-folder">
-            <div class="folder-tab" onclick="toggleFolder('main-folder')">
-                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
-                Python Calculator
-            </div>
-            <div class="folder-content">
-                <header class="project-header-inner">
-                    <h1>Python Calculator</h1>
-                </header>
+        <header class="project-header">
+            <h1 style="color: white; text-align: center; font-size: 3.5rem; margin-top: 4rem;">MY PROJECTS</h1>
+        </header>
 
-                <section class="project-narrative">
-                    <div class="narrative-content">
-                        <header class="narrative-header" style="display: none;">
-                        </header>
-                        <div class="narrative-text">
-                            <p>
-                                The Project that Started it All!!!
-                                <br>Back in the days when i was just starting to learn coding This calculator was my
-                                "Hello World" moment with Python. I built it to understand how logic flows from
-                                a keyboard into a working tool. It’s simple, it’s basic, but it taught me that I could
-                                actually build things with code. Every button click here is powered by the logic I
-                                learned during those first late-night sessions.
-                                i have added the calculator to my website, you can check that out below:
-
-                            </p>
-
-                        </div>
-                    </div>
-                </section>
-
-                <section class="calculator-module">
-                    <div class="calculator-wrapper">
-                        <div class="display-area">
-                            <div class="display-box" id="display">0</div>
-                        </div>
-                        <div class="btn-grid">
-                            <button class="calc-btn" onclick="clearAll()">AC</button>
-                            <button class="calc-btn" onclick="toggleNeg()">+/-</button>
-                            <button class="calc-btn" onclick="percent()">%</button>
-                            <button class="calc-btn" onclick="op('/')">÷</button>
-                            <button class="calc-btn" onclick="num('7')">7</button>
-                            <button class="calc-btn" onclick="num('8')">8</button>
-                            <button class="calc-btn" onclick="num('9')">9</button>
-                            <button class="calc-btn" onclick="op('*')">×</button>
-                            <button class="calc-btn" onclick="num('4')">4</button>
-                            <button class="calc-btn" onclick="num('5')">5</button>
-                            <button class="calc-btn" onclick="num('6')">6</button>
-                            <button class="calc-btn" onclick="op('-')">-</button>
-                            <button class="calc-btn" onclick="num('1')">1</button>
-                            <button class="calc-btn" onclick="num('2')">2</button>
-                            <button class="calc-btn" onclick="num('3')">3</button>
-                            <button class="calc-btn" onclick="op('+')">+</button>
-                            <button class="calc-btn" onclick="num('0')">0</button>
-                            <button class="calc-btn" onclick="num('.')">.</button>
-                            <button class="calc-btn" onclick="squareRoot()">√</button>
-                            <button class="calc-btn" onclick="equal()">=</button>
-                        </div>
-                    </div>
-
-                    <div class="repo-section">
-                        <span class="repo-label">Open Source Distribution</span>
-                        <a href="https://github.com/Blackhat-Deni/Calculator-using-Python" target="_blank"
-                            class="repo-link">
-                            <i data-lucide="github" style="width: 18px; height: 18px;"></i>
-                            heres the source code for the calculator
-                        </a>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-        <!-- Module 02: Research Pad -->
-        <section class="folder-section" id="module-02">
-            <div class="folder-tab" onclick="toggleFolder('module-02')">
-                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
-                Research Pad
-            </div>
-            <div class="folder-content">
-                <div class="blank-section-content">
-                    <i data-lucide="layers" style="width: 48px; height: 48px;"></i>
-                    <p>New content coming soon...</p>
+        <div class="folder-grid">
+            <!-- Python Calculator -->
+            <div class="folder-item" onclick="openProject('python-calculator')">
+                <div class="folder-icon-wrapper">
+                    <i data-lucide="folder"></i>
                 </div>
+                <span class="folder-label">Python Calculator</span>
             </div>
-        </section>
 
-        <!-- Module 03: Logic Gates -->
-        <section class="folder-section" id="module-03">
-            <div class="folder-tab" onclick="toggleFolder('module-03')">
-                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
-                Logic Gates
-            </div>
-            <div class="folder-content">
-                <div class="blank-section-content">
-                    <i data-lucide="cpu" style="width: 48px; height: 48px;"></i>
-                    <p>New content coming soon...</p>
+            <!-- Cinema Ticket Booking -->
+            <div class="folder-item" onclick="openProject('cinema-ticket-booking')">
+                <div class="folder-icon-wrapper">
+                    <i data-lucide="folder"></i>
                 </div>
+                <span class="folder-label">Cinema Ticket Booking</span>
             </div>
-        </section>
 
-        <!-- Module 04: Future Expansion -->
-        <section class="folder-section" id="module-04">
-            <div class="folder-tab" onclick="toggleFolder('folder-04')">
-                <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
-                Future Expansion
-            </div>
-            <div class="folder-content">
-                <div class="blank-section-content">
-                    <i data-lucide="rocket" style="width: 48px; height: 48px;"></i>
-                    <p>New content coming soon...</p>
+            <!-- Library Management System -->
+            <div class="folder-item" onclick="openProject('library-management-system')">
+                <div class="folder-icon-wrapper">
+                    <i data-lucide="folder"></i>
                 </div>
+                <span class="folder-label">Library Management System</span>
             </div>
-        </section>
 
-        <nav class="back-nav" style="margin-top: 6rem;">
+            <!-- Personal Website -->
+            <div class="folder-item" onclick="openProject('personal-website')">
+                <div class="folder-icon-wrapper">
+                    <i data-lucide="folder"></i>
+                </div>
+                <span class="folder-label">Personal Website</span>
+            </div>
+
+        </div>
+
+        <nav class="back-nav" style="margin-top: 6rem; text-align: center;">
             <a href="home.html">← Back to Dashboard</a>
         </nav>
     </div>
 
+    <!-- Project Window -->
+    <div id="window-overlay" class="window-overlay" onclick="closeProject()"></div>
+    <div id="project-window" class="project-window">
+        <div class="window-header">
+            <div class="window-controls">
+                <div class="control close" onclick="closeProject()"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            <div class="window-title" id="window-title">Project Title</div>
+            <div style="width: 60px;"></div> <!-- Spacer -->
+        </div>
+        <div class="window-content" id="window-content">
+            <!-- Content loaded dynamically -->
+        </div>
+    </div>
+
+    <!-- Project Contents (Hidden Templates) -->
+    <div id="content-python-calculator" style="display: none;">
+        <header class="project-header-inner" style="padding-top: 4rem;">
+            <h1 style="color: #1a1a1a !important; text-align: center; font-size: 3rem; margin-bottom: 1rem;">Python
+                Calculator</h1>
+        </header>
+
+        <section class="project-narrative" style="padding: 0 4rem;">
+            <div class="narrative-content">
+                <div class="narrative-text" style="color: #444;">
+                    <p>
+                        The Project that Started it All!!!
+                        <br>Back in the days when i was just starting to learn coding This calculator was my
+                        "Hello World" moment with Python. I built it to understand how logic flows from
+                        a keyboard into a working tool. It's simple, it's basic, but it taught me that I could
+                        actually build things with code. Every button click here is powered by the logic I
+                        learned during those first late-night sessions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="calculator-module" style="padding: 4rem 0;">
+            <div class="calculator-wrapper">
+                <div class="display-area">
+                    <div class="display-box" id="display">0</div>
+                </div>
+                <div class="btn-grid">
+                    <button class="calc-btn" onclick="clearAll()">AC</button>
+                    <button class="calc-btn" onclick="toggleNeg()">+/-</button>
+                    <button class="calc-btn" onclick="percent()">%</button>
+                    <button class="calc-btn" onclick="op('/')">÷</button>
+                    <button class="calc-btn" onclick="num('7')">7</button>
+                    <button class="calc-btn" onclick="num('8')">8</button>
+                    <button class="calc-btn" onclick="num('9')">9</button>
+                    <button class="calc-btn" onclick="op('*')">×</button>
+                    <button class="calc-btn" onclick="num('4')">4</button>
+                    <button class="calc-btn" onclick="num('5')">5</button>
+                    <button class="calc-btn" onclick="num('6')">6</button>
+                    <button class="calc-btn" onclick="op('-')">-</button>
+                    <button class="calc-btn" onclick="num('1')">1</button>
+                    <button class="calc-btn" onclick="num('2')">2</button>
+                    <button class="calc-btn" onclick="num('3')">3</button>
+                    <button class="calc-btn" onclick="op('+')">+</button>
+                    <button class="calc-btn" onclick="num('0')">0</button>
+                    <button class="calc-btn" onclick="num('.')">.</button>
+                    <button class="calc-btn" onclick="squareRoot()">√</button>
+                    <button class="calc-btn" onclick="equal()">=</button>
+                </div>
+            </div>
+
+            <div class="repo-section"
+                style="margin-top: 4rem; text-align: center; padding: 2rem; border-top: 1px solid #eee;">
+                <span class="repo-label"
+                    style="color: #999; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Open Source
+                    Distribution</span>
+                <br><br>
+                <a href="https://github.com/Blackhat-Deni/Calculator-using-Python" target="_blank" class="repo-link"
+                    style="color: #d4a853; text-decoration: none; font-family: var(--font-mono); font-size: 0.9rem;">
+                    <i data-lucide="github" style="width: 18px; height: 18px; vertical-align: middle;"></i>
+                    Heres the source code
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div id="content-cinema-ticket-booking" style="display: none;">
+        <div class="blank-section-content" style="padding: 10rem 0; text-align: center; color: #999;">
+            <i data-lucide="layers" style="width: 64px; height: 64px; margin-bottom: 2rem; opacity: 0.3;"></i>
+            <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;">
+                Another milestone in my journey of building web applications.<br>
+                The Cinema Ticket Booking System was born from a simple frustration. While spending time with friends,
+                we
+                realized that the only movie hall in our hometown didn't offer online ticket booking. Customers had to
+                be
+                physically present to secure seats for their favorite movies.<br>
+                In today's digital age, that limitation felt outdated. So I decided to build a modern web application
+                that
+                allows users to browse movies and book tickets online.<br>
+                This project represents both problem-solving and practical implementation of my growing development
+                skills.<br>
+                For the source code, visit my GitHub.
+            </p>
+        </div>
+    </div>
+
+    <div id="content-library-management-system" style="display: none;">
+        <div class="blank-section-content" style="padding: 10rem 0; text-align: center; color: #999;">
+            <i data-lucide="cpu" style="width: 64px; height: 64px; margin-bottom: 2rem; opacity: 0.3;"></i>
+            <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;">
+                For our summer university project, Dipesh Regmi, Suman Baduwal, and I developed a Library Management
+                System.<br>
+                The application enables efficient management of library operations, including adding, updating,
+                deleting, and searching for books. It also manages student records and maintains borrowing history for
+                proper tracking and accountability.<br>
+                While we identified certain security vulnerabilities that need improvement, the system performs smoothly
+                in terms of functionality. Database design and implementation were particularly engaging aspects of this
+                project.<br>
+                For the complete source code, please visit my GitHub.
+            </p>
+        </div>
+    </div>
+    <div id="content-personal-website" style="display: none;">
+        <div class="blank-section-content" style="padding: 10rem 0; text-align: center; color: #999;">
+            <i data-lucide="layers" style="width: 64px; height: 64px; margin-bottom: 2rem; opacity: 0.3;"></i>
+            <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;">
+                So, this is it — my personal website.<br>
+                I actually got this idea from the book Show Your Work by Austin Kleon. But I want more from it. There
+                are two reasons for this.<br>
+                First, I want a separate space on the internet just for me, where I can do anything I want — all my
+                imagination and execution. I have a problem with Meta apps because I feel like I can't customize them
+                the way I want. Here, I can do anything I want. Upload anything I want with zero restrictions. I'm in
+                charge here.<br>
+                Secondly, since I'm still honing my skills in the cybersecurity sector, I wanted to test my skills and
+                knowledge. I plan to perform security attacks on my own website and then upgrade it accordingly, making
+                it more secure against external attacks.<br>
+                It's like killing a snake without breaking the stick.<br>
+                I decided to build this website following a versioning system, which you can see at the end of the
+                homepage. I structured the website in a way that allows me to upgrade it easily.<br>
+                Version 1 (1-5) will focus on the basics.<br>
+                Version 2 (1-5) will focus on security vulnerabilities and optimization.<br>
+                Long journey? Yes, it is. But it's also fun learning new things.<br>
+                Version 1<br>
+
+                V1.1 = First deployment of the site. Unstandardized classes, no proper structure, floating image
+                problems, no JSON, too many unused files, slower loading speed.<br>
+                V1.2 = Added JSON, removed unused files, standardized classes, fixed floating image problems (card
+                system), resolved pathing issues, slightly faster loading speed.<br>
+                V1.3 = Applied lossless compression (.JPG to .WebP, .mov to .mp4), implemented lazy loading, polished
+                the UI, optimized for mobile phones, adjusted pathing issues, encoded HTML structure for CMS, faster
+                loading speed.<br>
+
+            </p>
+        </div>
+    </div>
+    </div>
+
     <script>
-        function toggleFolder(id) {
-            const folder = document.getElementById(id);
-            folder.classList.toggle('active');
+        function openProject(id) {
+            const windowEl = document.getElementById('project-window');
+            const overlayEl = document.getElementById('window-overlay');
+            const contentEl = document.getElementById('window-content');
+            const titleEl = document.getElementById('window-title');
+            const sourceContent = document.getElementById('content-' + id);
+
+            if (sourceContent) {
+                contentEl.innerHTML = sourceContent.innerHTML;
+                titleEl.innerText = id.replace(/-/g, ' ');
+
+                overlayEl.style.display = 'block';
+                windowEl.style.display = 'flex';
+
+                setTimeout(() => {
+                    overlayEl.classList.add('active');
+                    windowEl.classList.add('active');
+                }, 10);
+
+                // Re-initialize Lucide icons in the new content
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+
+                // If it's the calculator, re-init the display
+                if (id === 'python-calculator') {
+                    // Re-bind the display element because it was just copied
+                    window.currentDisplay = windowEl.querySelector('#display');
+                    update();
+                }
+            }
         }
 
+        function closeProject() {
+            const windowEl = document.getElementById('project-window');
+            const overlayEl = document.getElementById('window-overlay');
+
+            windowEl.classList.remove('active');
+            overlayEl.classList.remove('active');
+
+            setTimeout(() => {
+                windowEl.style.display = 'none';
+                overlayEl.style.display = 'none';
+            }, 500);
+        }
+
+        // Calculator Logic
         let current = '0';
         let memory = '';
         let operator = null;
         let restart = false;
 
-        const display = document.getElementById('display');
-
         function update() {
-            display.innerText = current;
+            const display = window.currentDisplay || document.getElementById('display');
+            if (display) {
+                display.innerText = current;
+            }
         }
 
         function num(val) {
@@ -518,7 +646,8 @@
         function equal() {
             if (operator && memory) {
                 try {
-                    current = eval(`${memory}${operator}${current}`).toString();
+                    // Using Function instead of eval for safety, though eval was original
+                    current = new Function('return ' + memory + operator + current)().toString();
                     operator = null;
                     memory = '';
                     restart = true;
@@ -529,8 +658,13 @@
                 }
             }
         }
-
-        lucide.createIcons();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 

@@ -18,16 +18,22 @@ echo ----------------------------------------------------
 echo.
 
 :: We try the most common commands one by one
-python -m http.server 8000
-if %ERRORLEVEL% neq 0 (
-    py -m http.server 8000
-)
-if %ERRORLEVEL% neq 0 (
-    python3 -m http.server 8000
-)
+python server.py
+if %ERRORLEVEL% equ 0 goto SUCCESS
 
-if %ERRORLEVEL% neq 0 (
-    echo [ERROR] Could not start the server. 
-    echo Please make sure Python is installed.
-    pause
-)
+py server.py
+if %ERRORLEVEL% equ 0 goto SUCCESS
+
+python3 server.py
+if %ERRORLEVEL% equ 0 goto SUCCESS
+
+:ERROR
+echo [ERROR] Could not start the server. 
+echo Please make sure Python is installed.
+pause
+goto END
+
+:SUCCESS
+:: Server ran and was closed by the user
+
+:END
