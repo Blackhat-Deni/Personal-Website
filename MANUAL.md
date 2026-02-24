@@ -14,7 +14,7 @@ To view your website, simply double-click the **`OPEN_WEBSITE.bat`** file in you
 3. Replace it with your desired quote.
 
 ### Changing Colors & Vibe
-1. Open `style.css`.
+1. Open `main-style-v1.css`.
 2. At the very top, inside the `:root` block, you will see a list of variables.
 3. Change the hex codes for `--bg-color`, `--text-color`, or `--accent-color` to shift the mood.
 
