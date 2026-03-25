@@ -1,85 +1,94 @@
 {
-    "resources": [
-        {
-            "title": "Mastering the Python Logic",
-            "category": "Python",
-            "description": "Python Basics.",
-            "thumbnail": "../assets/images/thumbnails/Python Basics.webp",
-            "url": "https://youtube.com/playlist?list=PL8HmoRTjTSlEgS2GsFaDr9zDLC1xD9FZf&si=M5L8hCHu9SLRjIJ7",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "The Visual Language",
-            "category": "Film Theory",
-            "description": "Story telling.",
-            "thumbnail": "../assets/images/thumbnails/hqdefault.webp",
-            "url": "https://youtube.com/playlist?list=PLjBkTEtM_Tw_cQi2PXrD9zSdFFsr4NQ5U&si=jea7xh4TCVlr_Wnp",
-            "type": "youtube",
-            "accent": "stone"
-        },
-        {
-            "title": "Networking Mastery",
-            "category": "Design",
-            "description": "CCNA!!",
-            "thumbnail": "../assets/images/thumbnails/hqdefault (1).webp",
-            "url": "https://youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds&si=68d0IyJG3zzmGqAW",
-            "type": "youtube",
-            "accent": "emerald"
-        },
-        {
-            "title": "Web Development",
-            "category": "Web Dev",
-            "description": "Build a website like me?  checkout this web dev playlist ",
-            "thumbnail": "../assets/images/thumbnails/Web Development.webp",
-            "url": "https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&si=TDXy5SbRBWi6o3IL",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "Computer Science",
-            "category": "Tech",
-            "description": "Learn Computer Science from scratch.",
-            "thumbnail": "../assets/images/thumbnails/Basic Computer Science.webp",
-            "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo&si=Saq3_AAMPbVHv7DT",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "Basic Economics",
-            "category": "Economics",
-            "description": "Learn Basic Economics from scratch. It's fun!! ",
-            "thumbnail": "../assets/images/thumbnails/Economics Basics.webp",
-            "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtPNZwz5_o_5uirJ8gQXnhEO&si=4FheUxAdk00gxegQ",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "Full Cisco Packet Tracer Tutorial Playlist",
-            "category": "Networking",
-            "description": "Learn packet tracing in Cisco Packet Tracer. Basic but necessary.",
-            "thumbnail": "../assets/images/thumbnails/Cisco Packet Tracer.webp",
-            "url": "https://youtube.com/playlist?list=PLVFyjfF2Drdt9hXs37KTPTIqtNVCXFfOG&si=LkW5GVk8KudytZL2",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "Psychology",
-            "category": "Psychology",
-            "description": "Deep dive into psychology. My personal favorite.",
-            "thumbnail": "../assets/images/thumbnails/Psychology.webp",
-            "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtOPRKzVLY0jJY-uHOH9KVU6&si=AVPgQnprdzauiZDU",
-            "type": "youtube",
-            "accent": "blue"
-        },
-        {
-            "title": "Neural networks",
-            "category": "Artificial Intelligence",
-            "description": "This playlist shows how AI actually works. Learn the basics and keepup with the latest trends.",
-            "thumbnail": "../assets/images/thumbnails/Neural Networks.webp",
-            "url": "https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=2nys_psF69MdY6zE",
-            "type": "youtube",
-            "accent": "blue"
-        }
-    ]
+  "resources": [
+    {
+      "title": "Mastering the Python Logic",
+      "category": "Python",
+      "description": "Python Basics.",
+      "thumbnail": "../assets/images/thumbnails/Python Basics.webp",
+      "url": "https://youtube.com/playlist?list=PL8HmoRTjTSlEgS2GsFaDr9zDLC1xD9FZf&si=M5L8hCHu9SLRjIJ7",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "The Visual Language",
+      "category": "Film Theory",
+      "description": "Story telling.",
+      "thumbnail": "../assets/images/thumbnails/hqdefault.webp",
+      "url": "https://youtube.com/playlist?list=PLjBkTEtM_Tw_cQi2PXrD9zSdFFsr4NQ5U&si=jea7xh4TCVlr_Wnp",
+      "type": "youtube",
+      "accent": "stone"
+    },
+    {
+      "title": "Networking Mastery",
+      "category": "Design",
+      "description": "CCNA!!",
+      "thumbnail": "../assets/images/thumbnails/hqdefault (1).webp",
+      "url": "https://youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds&si=68d0IyJG3zzmGqAW",
+      "type": "youtube",
+      "accent": "emerald"
+    },
+    {
+      "title": "Web Development",
+      "category": "Web Dev",
+      "description": "Build a website like me?  checkout this web dev playlist ",
+      "thumbnail": "../assets/images/thumbnails/Web Development.webp",
+      "url": "https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w&si=TDXy5SbRBWi6o3IL",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "Computer Science",
+      "category": "Tech",
+      "description": "Learn Computer Science from scratch.",
+      "thumbnail": "../assets/images/thumbnails/Basic Computer Science.webp",
+      "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo&si=Saq3_AAMPbVHv7DT",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "Basic Economics",
+      "category": "Economics",
+      "description": "Learn Basic Economics from scratch. It's fun!! ",
+      "thumbnail": "../assets/images/thumbnails/Economics Basics.webp",
+      "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtPNZwz5_o_5uirJ8gQXnhEO&si=4FheUxAdk00gxegQ",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "Full Cisco Packet Tracer Tutorial Playlist",
+      "category": "Networking",
+      "description": "Learn packet tracing in Cisco Packet Tracer. Basic but necessary.",
+      "thumbnail": "../assets/images/thumbnails/Cisco Packet Tracer.webp",
+      "url": "https://youtube.com/playlist?list=PLVFyjfF2Drdt9hXs37KTPTIqtNVCXFfOG&si=LkW5GVk8KudytZL2",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "Psychology",
+      "category": "Psychology",
+      "description": "Deep dive into psychology. My personal favorite.",
+      "thumbnail": "../assets/images/thumbnails/Psychology.webp",
+      "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtOPRKzVLY0jJY-uHOH9KVU6&si=AVPgQnprdzauiZDU",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "title": "Neural networks",
+      "category": "Artificial Intelligence",
+      "description": "This playlist shows how AI actually works. Learn the basics and keepup with the latest trends.",
+      "thumbnail": "../assets/images/thumbnails/Neural Networks.webp",
+      "url": "https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=2nys_psF69MdY6zE",
+      "type": "youtube",
+      "accent": "blue"
+    },
+    {
+      "type": "youtube",
+      "accent": "blue",
+      "title": "Pentesting Tools",
+      "thumbnail": "/assets/images/hqdefault.jpg",
+      "category": "Cyber Security",
+      "description": "10 Pentesting Tools in Kali Linux!",
+      "url": "https://youtube.com/playlist?list=PLz85B8c3OIFbATyEKjPTFYc8D364k7fOW&si=7B-HsXhEpo4ykWtz"
+    }
+  ]
 }
