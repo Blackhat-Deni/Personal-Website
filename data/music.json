@@ -281,6 +281,12 @@
       "cover": "../assets/images/music/Alfredo.webp",
       "favSong": "Scottie Beam",
       "note": "Unskippable album. Jazz type type shit."
+    },
+    {
+      "title": "The Moldy Peaches",
+      "artist": "The Moldy Peaches",
+      "cover": "/assets/images/the-moldy-peaches.webp",
+      "note": "Goodshit"
     }
   ]
 }
