@@ -89,6 +89,15 @@
       "category": "Cyber Security",
       "description": "10 Pentesting Tools in Kali Linux!",
       "url": "https://youtube.com/playlist?list=PLz85B8c3OIFbATyEKjPTFYc8D364k7fOW&si=7B-HsXhEpo4ykWtz"
+    },
+    {
+      "type": "youtube",
+      "accent": "blue",
+      "title": "???",
+      "category": "Philosophy",
+      "thumbnail": "/assets/images/psychology.webp",
+      "url": "https://youtube.com/playlist?list=PL8dPuuaLjXtNgK6MZucdYldNkMybYIHKR&si=LhpZ5VRpyob9aYCc",
+      "description": "???"
     }
   ]
 }
