@@ -178,5 +178,15 @@
         "title": "Body Language",
         "cover": "body language.webp",
         "spineColor": "#212121"
+    },
+    {
+        "title": "Courage Is Calling",
+        "cover": "Courage Is Calling.webp",
+        "spineColor": "#B8860B"
+    },
+    {
+        "title": "The Power of Now",
+        "cover": "The Power of Now.webp",
+        "spineColor": "#6B4226"
     }
 ]
